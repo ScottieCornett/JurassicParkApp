@@ -20,14 +20,16 @@ html {
 body {
   font-family: var(--main-font);
 }
-nav {
+/* nav {
   height: 30vh;
-}
+} */
 .nav-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 15vh;
+  padding-bottom: 10px;
   background: linear-gradient(
     to top left,
     rgba(255, 29, 24, 1),
@@ -118,7 +120,7 @@ main section.banner {
 .nav-item-desktop:hover {
   color: rgb(255, 255, 255);
   /* text-shadow: 0px 0px 2px rgb(218, 218, 218); */
-  border-bottom: 2px solid white;
+  /* border-bottom: 2px solid white; */
 }
 
 .drop-down-active {
@@ -224,8 +226,8 @@ main section.banner {
   height: 50vh;
 }
 #nav-logo {
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
 }
 
 @media screen and (max-width: 1024px) {

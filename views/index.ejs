@@ -1,50 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <title>Jurassic Park&#174; Official Site</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="nav-container">
-        <div class="menu-toggle">
-          <div class="hamburger">
-            <span></span>
-          </div>
-        </div>
-        <div class="img-container">
-          <img src="/imgs/logo2.svg" alt="jplogo" id="nav-logo" />
-        </div>
-        <div class="nav-links-desktop">
-          <a href="#" class="nav-item-desktop">Book Now</a>
-          <a class="nav-item-desktop">Meet Our Dinos!</a>
-          <!-- <a class="nav-item-desktop">Attractions</a> -->
-          <a class="nav-item-desktop">Contact Us</a>
-        </div>
+<% layout('layouts/boilerplate') %>
+
+<main>
+  <section class="mobile-dropdown">
+    <a href="/book" class="link-item-mobile">Book Now</a>
+    <a href="#" class="link-item-mobile">Meet Our Dinos!</a>
+    <a href="/contact" class="link-item-mobile">Contact Us</a>
+  </section>
+  <section class="banner">
+    <div class="container">
+      <h1>
+        A destination <br />
+        <span id="years">65 million years</span> in the making
+      </h1>
+      <div class="reserve">
+        <h3>Make memories for a lifetime in the land that time forgot</h3>
       </div>
-    </nav>
-    <main>
-      <section class="mobile-dropdown">
-        <a href="#" class="link-item-mobile">Book Now</a>
-        <a href="#" class="link-item-mobile">Meet Our Dinos!</a>
-        <a href="#" class="link-item-mobile">Contact Us</a>
-      </section>
-      <section class="banner">
-        <div class="container">
-          <h1>
-            A destination <br />
-            <span id="years">65 million years</span> in the making
-          </h1>
-          <div class="reserve">
-            <h3>Make memories for a lifetime in the land that time forgot</h3>
-          </div>
-          <button class="btn">Start Your Adventure</button>
-        </div>
-      </section>
-    </main>
-    <script src="/js/main.js"></script>
-  </body>
-</html>
+      <button class="btn">Start Your Adventure</button>
+    </div>
+  </section>
+</main>
