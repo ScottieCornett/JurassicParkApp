@@ -12,23 +12,23 @@ const ContactSchema = new Schema({
   },
   email: {
     type: String,
-    required: true,
+    required: false,
   },
   streetAddress: {
     type: String,
-    required: true,
+    required: false,
   },
   city: {
     type: String,
-    required: true,
+    required: false,
   },
   state: {
     type: String,
-    required: true,
+    required: false,
   },
-  country: {
+  zipCode: {
     type: String,
-    required: true,
+    required: false,
   },
   telephoneNumber: {
     type: String,

@@ -4,6 +4,7 @@ const engine = require('ejs-mate');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Contact = require('./models/contact');
+const Dinosaur = require('./models/dinosaur');
 
 mongoose.connect('mongodb://127.0.0.1:27017/jurassicpark');
 const db = mongoose.connection;
@@ -33,13 +34,24 @@ app.get('/book', (req, res) => {
 app.get('/contact', (req, res) => {
   res.render('contact');
 });
+app.post('/contact', async (req, res, next) => {
+  try {
+    const contact = new Contact(req.body.contact);
+    await contact.save();
+    res.redirect('/');
+  } catch (e) {
+    next(e);
+  }
+});
 
-app.get('/dinosaurs', (req, res) => {
-  res.render('dinos/index');
+app.get('/dinosaurs', async (req, res) => {
+  const dinosaurs = await Dinosaur.find({});
+  res.render('dinos/index', { dinosaurs });
 });
 
 app.use((err, req, res, next) => {
   res.send('Something broke');
+  console.log(err);
 });
 
 app.listen(3000, () => {

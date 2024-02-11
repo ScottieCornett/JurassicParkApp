@@ -1,3 +1,6 @@
-<% layout('layouts/boilerplate') %>
-
-<h1>ROARRRRR!!!!!</h1>
+<% layout('layouts/boilerplate') %> <% for (let dinosaur of dinosaurs) %>
+<div class="sub-container">
+  <% for (let dinosaur of dinosaurs) { %>
+  <h4><%=dinosaur.name %>
+  <% } %>
+</div>

@@ -59,13 +59,12 @@ body {
   font-weight: 400;
   cursor: pointer;
 }
-.container {
+.home-container {
   z-index: 99;
 }
-.container h1 {
+.home-container h1 {
   color: white;
   font-size: 72px;
-  z-index: 99;
   font-weight: 700;
 }
 .reserve {
@@ -73,6 +72,80 @@ body {
   font-size: 30px;
   padding: 3rem 0;
   font-weight: 300;
+}
+.contact-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: url('../imgs/control2.png');
+  background-size: cover;
+  font-size: 2em;
+}
+.contact-body {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.contact-body .contact-title {
+  font-size: 2.5em;
+  font-weight: 600;
+  position: relative;
+}
+.contact-body form .contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .contact-details .contact-input {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.contact-details .contact-input .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.contact-details .contact-input input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 0.75em;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.contact-details .contact-input input:focus,
+.contact-details .contact-input input:valid {
+  border-color: #12002f;
+}
+
+form .contact-btn {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .contact-btn input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  background-color: #12002f;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+form .contact-btn input:hover {
+  background: #ccc;
 }
 .btn {
   padding: 15px;
@@ -133,6 +206,11 @@ section.banner {
   bottom: 0;
   height: 30px;
 }
+.dino-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .nav-item-desktop:hover {
   color: rgb(255, 255, 255);
   /* text-shadow: 0px 0px 2px rgb(218, 218, 218); */
@@ -166,9 +244,7 @@ section.banner {
   height: 50px;
   width: 50px;
 }
-.contact-container {
-  color: #2e3047;
-}
+
 .menu-toggle {
   display: none;
   position: fixed;
