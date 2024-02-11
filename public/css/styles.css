@@ -19,10 +19,14 @@ html {
 
 body {
   font-family: var(--main-font);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 /* nav {
   height: 30vh;
 } */
+
 .nav-container {
   display: flex;
   flex-direction: column;
@@ -58,7 +62,7 @@ body {
 .container {
   z-index: 99;
 }
-h1 {
+.container h1 {
   color: white;
   font-size: 72px;
   z-index: 99;
@@ -87,7 +91,7 @@ h1 {
   font-style: italic;
 }
 
-main section.banner {
+section.banner {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -100,7 +104,7 @@ main section.banner {
   left: 0;
   right: 0;
   display: flex;
-  height: 100vh;
+  height: 98vh;
   background-image: url(../imgs/hero-main.png);
   background-size: cover;
   z-index: -1;
@@ -116,6 +120,18 @@ main section.banner {
     background-color: #12002f;
     opacity: 0.4;
   }
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e3047;
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 30px;
 }
 .nav-item-desktop:hover {
   color: rgb(255, 255, 255);
@@ -149,6 +165,9 @@ main section.banner {
   border: 1px solid black;
   height: 50px;
   width: 50px;
+}
+.contact-container {
+  color: #2e3047;
 }
 .menu-toggle {
   display: none;
