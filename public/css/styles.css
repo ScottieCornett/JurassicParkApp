@@ -2,31 +2,40 @@
 
 :root {
   --main-font: 'Fira Sans', sans-serif;
-  --nav-font: 'Bungee Inline', sans-serif;
-  --lightgray: #ddd;
-  --fontprimary: rgba(10, 255, 10, 0.9);
 }
 
 * {
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
+  margin: 0;
+  box-sizing: 0;
   font-family: var(--main-font);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
-/* nav {
-  height: 30vh;
-} */
 
+.home-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgb(250, 101, 1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+}
 .nav-container {
   display: flex;
   flex-direction: column;
@@ -59,8 +68,33 @@ body {
   font-weight: 400;
   cursor: pointer;
 }
-.home-container {
-  z-index: 99;
+main section.banner {
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(../imgs/hero-main.png);
+  position: top right;
+  background-size: cover;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: #12002f;
+    opacity: 0.4;
+  }
+}
+
+main section.banner .home-container {
+  position: relative;
+  z-index: 1;
 }
 .home-container h1 {
   color: white;
@@ -81,7 +115,7 @@ body {
   padding: 10px;
   background: url('../imgs/control2.png');
   background-size: cover;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .contact-body {
   max-width: 700px;
@@ -91,7 +125,7 @@ body {
   border-radius: 5px;
 }
 .contact-body .contact-title {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 600;
   position: relative;
 }
@@ -103,6 +137,7 @@ body {
 }
 form .contact-details .contact-input {
   margin-bottom: 15px;
+  margin-right: 15px;
   width: calc(100% / 2 - 20px);
 }
 .contact-details .contact-input .details {
@@ -118,7 +153,7 @@ form .contact-details .contact-input {
   border-radius: 5px;
   border: 1px solid #ccc;
   padding-left: 15px;
-  font-size: 0.75em;
+  font-size: 0.5em;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
@@ -147,64 +182,9 @@ form .contact-btn input {
 form .contact-btn input:hover {
   background: #ccc;
 }
-.btn {
-  padding: 15px;
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 10px;
-  text-transform: uppercase;
-  outline: none;
-  border: none;
-  background-color: rgb(250, 101, 1);
-  color: white;
-  cursor: pointer;
-}
 #years {
   color: rgb(250, 101, 1);
   font-style: italic;
-}
-
-section.banner {
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 1;
-  flex-basis: auto;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  height: 98vh;
-  background-image: url(../imgs/hero-main.png);
-  background-size: cover;
-  z-index: -1;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    background-color: #12002f;
-    opacity: 0.4;
-  }
-}
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #2e3047;
-  color: white;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  height: 30px;
 }
 .dino-layout {
   display: flex;
@@ -229,12 +209,12 @@ section.banner {
   border: 1px solid black;
 }
 /* .meet-drop-down {
-  display: none;
-  position: absolute;
-  top: 245px;
-  padding-top: -1rem;
-  border: 1px solid black;
-} */
+    display: none;
+    position: absolute;
+    top: 245px;
+    padding-top: -1rem;
+    border: 1px solid black;
+  } */
 .is-active {
   display: flex;
   opacity: 1;
@@ -301,7 +281,7 @@ section.banner {
   display: none;
   font-size: 30px;
   background-color: #eee;
-  /* z-index: 99; */
+  z-index: 99 !important;
 }
 .mobile-dropdown > a {
   text-decoration: none;
