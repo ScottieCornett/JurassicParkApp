@@ -276,6 +276,13 @@ form .contact-btn input:hover {
   top: 0;
   transform: rotate(90deg);
 }
+.weather {
+  z-index: 99 !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 10px;
+}
 
 .mobile-dropdown {
   display: none;
