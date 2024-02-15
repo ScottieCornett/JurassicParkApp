@@ -6,6 +6,15 @@ const DinosaurSchema = new Schema({
   species: String,
   description: String,
   population: Number,
+  flagged: Boolean,
+  flag: {
+    type: String,
+    enum: ['NONE', 'BEHAVIOR', 'MEDICAL'],
+  },
+  status: {
+    type: String,
+    enum: ['GREEN', 'RED'],
+  },
 });
 
 module.exports = mongoose.model('Dinosaur', DinosaurSchema);
