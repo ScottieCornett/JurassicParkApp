@@ -3,10 +3,9 @@ const path = require('path');
 const engine = require('ejs-mate');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const catchAsync = require('./utils/wrapAsync');
-const Contact = require('./models/contact');
-const Dinosaur = require('./models/dinosaur');
-const wrapAsync = require('./utils/wrapAsync');
+const bookTrip = require('./routes/bookTrip');
+const dinos = require('./routes/dinos');
+const contact = require('./routes/contact');
 
 mongoose.connect('mongodb://127.0.0.1:27017/jurassicpark');
 const db = mongoose.connection;
@@ -21,33 +20,15 @@ app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use('/booktrip', bookTrip);
+app.use('/dinosaurs', dinos);
+app.use('/contact', contact);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.render('index');
-});
-
-app.get('/book', (req, res) => {
-  res.render('book');
-});
-
-app.get('/contact', (req, res) => {
-  res.render('contact');
-});
-app.post(
-  '/contact',
-  wrapAsync(async (req, res, next) => {
-    const contact = new Contact(req.body.contact);
-    await contact.save();
-    res.redirect('/');
-  })
-);
-
-app.get('/dinosaurs', async (req, res) => {
-  const dinosaurs = await Dinosaur.find({});
-  res.render('dinos/index', { dinosaurs });
 });
 
 app.use((err, req, res, next) => {
