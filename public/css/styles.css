@@ -117,6 +117,30 @@ main section.banner .home-container {
   background-size: cover;
   font-size: 1.5em;
 }
+.dino-container {
+  display: flex;
+  color: #eee;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: url('../imgs/aviary1.png');
+  background-size: cover;
+}
+.dino-container h1 {
+  font-size: 96px;
+  padding-bottom: 3rem;
+  color: rgba(250, 101, 1, 0.85);
+  text-shadow: 0.5px 0.5px 0 rgb(0, 0, 0);
+}
+.dino-container .dino-list {
+  list-style: none;
+}
+.dino-container .dino-list a {
+  text-decoration: none;
+  font-size: 48px;
+  color: #eee;
+}
 .contact-body {
   max-width: 700px;
   width: 100%;

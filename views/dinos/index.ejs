@@ -1,6 +1,14 @@
 <% layout('layouts/boilerplate') %> <% for (let dinosaur of dinosaurs) %>
-<div class="sub-container">
+<div class="dino-container">
+  <h1>All Dinosaurs</h1>
   <% for (let dinosaur of dinosaurs) { %>
-  <h4><%=dinosaur.name %>
+  <ul class="dino-list">
+    <li>
+      <a href="/dinosaurs/<%= dinosaur._id  %>">
+        <%=dinosaur.name %> - <%= dinosaur.species %></a
+      >
+    </li>
+  </ul>
+
   <% } %>
 </div>
