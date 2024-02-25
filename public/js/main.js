@@ -6,6 +6,11 @@ const weatherIcon = document.querySelector('.weather-icon');
 const mobileMenu = document.querySelector('.mobile-dropdown');
 const mobileLink = document.querySelectorAll('.link-item-mobile');
 const navItemDesktop = document.querySelectorAll('.nav-item-desktop');
+const parkOpen = document.getElementById('parkOpen');
+
+const time = new Date().getHours();
+parkOpen.textContent = time > 8 && time <= 19 ? 'Open' : 'Closed';
+parkOpen.style.color = time > 8 && time <= 19 ? 'green' : 'red';
 
 menuToggle.addEventListener('click', () => {
   menuToggle.classList.toggle('is-active');

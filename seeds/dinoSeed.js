@@ -9,6 +9,7 @@ db.once('open', () => {
 });
 
 const seedDinos = async () => {
+  await Dinosaur.deleteMany({});
   await Dinosaur.insertMany([
     {
       name: 'Sue',
@@ -16,9 +17,10 @@ const seedDinos = async () => {
       description:
         'The star of the show! Sue is a fearsome beast to behold. Gaze at your own risk!!',
       population: 1,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708560746/jurassicpark/agcrgehlwravhreymsgv.png',
+        fileName: 'jurassicpark/agcrgehlwravhreymsgv',
+      },
     },
     {
       name: 'Cera',
@@ -26,9 +28,10 @@ const seedDinos = async () => {
       description:
         'Cera is our adult Triceratops. Her brow horns are over 3 feet long!',
       population: 2,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708818093/jurassicpark/trike1_mealqf.png',
+        fileName: 'jurassicpark/trike1_mealqf',
+      },
     },
     {
       name: 'Trisha',
@@ -36,9 +39,10 @@ const seedDinos = async () => {
       description:
         'Our newest addition to Jurassic Park, Trisha is a juvenile Triceratops. She can be viewed in our nursery for now.',
       population: 2,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708818092/jurassicpark/babytrike_njglnd.png',
+        fileName: 'jurassicpark/babytrike_njglnd',
+      },
     },
     {
       name: 'Victoria',
@@ -46,73 +50,58 @@ const seedDinos = async () => {
       description:
         'Our oldest and largest Raptor, Victoria leads our ferocious pack of apex predators at Jurassic Park!',
       population: 3,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708821022/jurassicpark/raptor2_mp2att.png',
+        fileName: 'jurassicpark/raptor2_mp2att',
+      },
     },
     {
-      name: 'Tiger',
+      name: 'Blue',
       species: 'Velociraptor',
       description:
-        "Named for the stripes on her back, Tiger is the fastest Raptor we have. Measured at 56mph in the open, prey doesn't stand a chance when she's on the prowl",
+        "Named for the blue stripe on her back, Blue is the fastest Raptor we have. Measured at 56mph in the open, prey doesn't stand a chance when she's on the prowl",
       population: 3,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708821023/jurassicpark/raptor4_nv0x4u.png',
+        fileName: 'jurassicpark/raptor4_nv0x4u',
+      },
     },
     {
-      name: 'Princess',
+      name: 'Delta',
       species: 'Velociraptor',
       description:
-        'Princess is the youngest and newest member of the Jurassic Park raptor pack. Her small size deceptively hides her predatory power.',
+        'Delta is the youngest and newest member of the Jurassic Park raptor pack. Do not let her young age fool you -- she is wise beyond her years at hunting.',
       population: 3,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708821023/jurassicpark/raptor5_naxsq8.png',
+        fileName: 'jurassicpark/raptor5_naxsq8',
+      },
     },
     {
-      name: 'Ducky',
-      species: 'Hadrosaur',
+      name: 'Ami',
+      species: 'Ankylosaurus',
       description:
-        'Ducky is a happy-go-lucky swimmer. She loves spending time in our many ponds that we have on the island.',
+        'Ami is a walking tank. Despite her fearsome appearance, she is one of our nicest dinosaurs!!',
       population: 1,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
-    },
-    {
-      name: 'Petri',
-      species: 'Pterodactyl',
-      description:
-        'Our winged animal, Petri is actually not a dinosaur. However, her kind died out during the late Jurassic Period, over 150 million years ago',
-      population: 1,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
-    },
-    {
-      name: 'Spike',
-      species: 'Stegosaurus',
-      description:
-        'Coming at over 20 feet in length, Spike is an amazing sight. Her two rows of plates on her back provide the armor she needed from carnivores when her species roamed the earth',
-      population: 1,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708824218/jurassicpark/anky1_q82qmw.png',
+        fileName: 'jurassicpark/anky1_q82qmw',
+      },
     },
     {
       name: 'Littlefoot',
-      species: 'Apatosaurus',
+      species: 'Brachiosaurus',
       description:
         "Littlefoot's 18 foot neck can be seen from over a mile away. She's our largest and friendliest dinosaur!",
       population: 1,
-      flagged: false,
-      flag: 'NONE',
-      status: 'GREEN',
+      image: {
+        url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708824219/jurassicpark/brachy1_hue6r1.png',
+        fileName: 'jurassicpark/brachy1_hue6r1',
+      },
     },
   ]);
 };
 
-// seedDinos().then(() => {
-//   mongoose.connection.close();
-// });
+seedDinos().then(() => {
+  mongoose.connection.close();
+});

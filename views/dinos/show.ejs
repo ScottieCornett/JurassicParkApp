@@ -1,6 +1,25 @@
 <% layout('layouts/boilerplate') %>
-
-<div class="dino-show-container">
-  <h1><%= dinosaur.name %></h1>
-  <h2><%= dinosaur.species %></h2>
+<div class="dino-show-body">
+  <div class="dino-wrap">
+    <div class="dino-card">
+      <div class="dino-card-inner">
+        <div class="dino-card-header">
+          <img
+            src="<%= dinosaur.image.url  %>"
+            alt="a picture of the selected dinosaur"
+            class="dino-img"
+          />
+          <h1><%= dinosaur.name %></h1>
+        </div>
+        <div class="dino-card-body">
+          <h2>Description</h2>
+          <p><%= dinosaur.description %></p>
+          <p><strong>Species: </strong><%= dinosaur.species %></p>
+        </div>
+        <div class="return-to-dinos">
+          <a class="return-btn" href="/dinosaurs">Return to dino list</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

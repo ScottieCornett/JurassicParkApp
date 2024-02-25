@@ -63,7 +63,8 @@
 .nav-item-desktop {
   font-size: 25px;
   font-family: var(--main-font);
-  color: rgb(240, 245, 255);
+  /* color: rgb(240, 245, 255); */
+  color: rgba(210, 210, 210, 1);
   text-decoration: none;
   font-weight: 400;
   cursor: pointer;
@@ -141,6 +142,86 @@ main section.banner .home-container {
   font-size: 48px;
   color: #eee;
 }
+
+.dino-show-body {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #fff, #ccc);
+}
+
+.dino-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.dino-card {
+  display: block;
+  max-width: 900px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 6px 6px rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-out;
+}
+.dino-card:hover {
+  transform: translate(-6px, -6px);
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.2);
+}
+.dino-card-inner {
+  background-color: #fff;
+}
+.dino-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  padding: 25px;
+}
+.dino-img {
+  max-width: 750px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.dino-card-header h1 {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.dino-card-body {
+  padding: 25px;
+}
+.dino-card-body h2 {
+  color: #222;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.dino-card-body p {
+  color: #666;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.dino-card-body p:last-of-type {
+  margin-bottom: 0;
+}
+.return-to-dinos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  width: 100%;
+}
+.return-to-dinos a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(250, 101, 1);
+  text-transform: uppercase;
+  color: #fff;
+}
 .contact-body {
   max-width: 700px;
   width: 100%;
@@ -210,13 +291,10 @@ form .contact-btn input:hover {
   color: rgb(250, 101, 1);
   font-style: italic;
 }
-.dino-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .nav-item-desktop:hover {
   color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgb(255, 255, 255);
   /* text-shadow: 0px 0px 2px rgb(218, 218, 218); */
   /* border-bottom: 2px solid white; */
 }
@@ -306,8 +384,16 @@ form .contact-btn input:hover {
   left: 0;
   top: 0;
   margin-top: 10px;
+  margin-left: 10px;
 }
-
+.hours {
+  z-index: 99 !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 30px;
+  margin-left: 10px;
+}
 .mobile-dropdown {
   display: none;
   font-size: 30px;
@@ -364,6 +450,9 @@ form .contact-btn input:hover {
     margin: 0 auto;
   }
   .weather {
+    display: none;
+  }
+  .hours {
     display: none;
   }
   .container {
