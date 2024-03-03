@@ -43,6 +43,7 @@
   justify-content: center;
   height: 10%;
   padding-bottom: 10px;
+  margin-bottom: -5px;
   background: linear-gradient(
     to top left,
     rgba(255, 29, 24, 1),
@@ -114,7 +115,7 @@ main section.banner .home-container {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: url('../imgs/control2.png');
+  background: url('../imgs/control-bg.png');
   background-size: cover;
   font-size: 1.5em;
 }
@@ -292,12 +293,12 @@ form .contact-btn input:hover {
   font-style: italic;
 }
 .booking-body {
-  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #ddd;
+  background: url(../imgs/mainstreet.png);
+  background-size: cover;
 }
 .panel {
   background-color: white;
@@ -309,9 +310,10 @@ form .contact-btn input:hover {
   flex-direction: column;
   text-align: center;
   text-transform: uppercase;
+  opacity: 1;
 }
 .pricing-plan {
-  border-bottom: 1px solid #e1f1ff;
+  border-bottom: 1px solid #12002f;
 }
 .pricing-plan:last-child {
   border-bottom: none;
@@ -322,37 +324,37 @@ form .contact-btn input:hover {
   margin-top: 10px;
 }
 .pricing-header {
-  color: #888;
+  color: #12002f;
   font-weight: 600;
   letter-spacing: 1px;
 }
 .pricing-features {
   margin: 50px 0 25px;
-  color: #8695a7;
+  color: #12002f;
 }
 .pricing-features-item {
-  font-weight: 600;
+  font-weight: 900;
   letter-spacing: 1px;
   list-style: none;
   font-size: 12px;
   line-height: 1.5;
   padding: 15px 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #12002f;
 }
 .pricing-features-item:last-child {
-  border-bottom: 1px solid #e1f1ff;
+  border-bottom: 1px solid #12002f;
 }
 .pricing-price {
-  color: #8695a8;
+  color: #12002f;
   display: block;
   font-size: 32px;
   font-weight: 700;
 }
 
 .pricing-button {
-  border: 1px solid #ccc;
+  border: 1px solid #12002f;
   border-radius: 10px;
-  color: #aaa;
+  color: #12002f;
   display: inline-block;
   padding: 15px 35px;
   text-decoration: none;
@@ -366,7 +368,7 @@ form .contact-btn input:hover {
 }
 
 .pricing-button.is-featured {
-  background-color: #8695a7;
+  background-color: #12002f;
   color: white;
 }
 .pricing-button.is-featured:hover,
@@ -380,24 +382,18 @@ form .contact-btn input:hover {
   /* border-bottom: 2px solid white; */
 }
 
-.drop-down-active {
+/* .drop-down-active {
   display: flex;
   border: 2px solid black;
-}
-.plan-drop-down {
+} */
+/* .plan-drop-down {
   display: none;
   position: absolute;
   top: 245px;
   padding-top: -1rem;
   border: 1px solid black;
-}
-/* .meet-drop-down {
-    display: none;
-    position: absolute;
-    top: 245px;
-    padding-top: -1rem;
-    border: 1px solid black;
-  } */
+} */
+
 .is-active {
   display: flex;
   opacity: 1;
@@ -476,28 +472,49 @@ form .contact-btn input:hover {
   margin-left: 10px;
 }
 .mobile-dropdown {
-  display: none;
+  display: block;
+  opacity: 0;
+  height: 0;
   font-size: 30px;
-  background-color: #eee;
-  z-index: 99 !important;
+  letter-spacing: 0.05px;
+  background: linear-gradient(
+    to top left,
+    rgba(255, 29, 24, 1),
+    rgba(240, 184, 62, 1)
+  );
+  border: 1px solid black;
+  z-index: 10;
+  box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.4);
 }
 .mobile-dropdown > a {
+  text-align: center;
   text-decoration: none;
+  background: none;
+  width: 100%;
   padding: 15px 0px;
   color: var(--darkgray);
 }
+.mobile-dropdown > a:hover {
+  width: 40%;
+  border-bottom: 2px solid black;
+  margin-top: 2px;
+}
 
 .is-selected {
+  transition: all 0.2s ease-in;
   display: flex;
   flex-direction: column;
   position: absolute;
   width: 100%;
-  top: 203px;
+  top: 184px;
+  margin: auto;
   text-decoration: none;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 50vh;
+  border-radius: 5px;
 }
+
 .modal {
   position: absolute;
   top: 60%;
@@ -559,7 +576,14 @@ form .contact-btn input:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
-  z-index: 15;
+  z-index: -1;
+}
+.basic-img {
+  opacity: 0.7;
+}
+
+.silver-img {
+  opacity: 0.7;
 }
 
 #nav-logo {
@@ -591,8 +615,8 @@ form .contact-btn input:hover {
   .menu-toggle {
     display: block;
   }
-  .mobile-dropdown .link-item-mobile {
-    transition: 2s ease;
+  .mobile-dropdown.is-selected {
+    opacity: 1;
   }
   .container.btn {
     margin: 0 auto;
@@ -623,6 +647,7 @@ form .contact-btn input:hover {
 @media (min-width: 1024px) {
   .panel {
     flex-direction: row;
+    opacity: 0.9;
   }
   .pricing-plan {
     border-bottom: none;
@@ -631,5 +656,8 @@ form .contact-btn input:hover {
   }
   .pricing-plan:last-child {
     border-right: none;
+  }
+  .pricing-button {
+    opacity: 1;
   }
 }

@@ -21,17 +21,48 @@ const time = new Date().getHours();
 parkOpen.textContent = time > 8 && time <= 19 ? 'Open' : 'Closed';
 parkOpen.style.color = time > 8 && time <= 19 ? 'green' : 'red';
 
+function disableScroll() {
+  // Get the current page scroll position
+  scrollTop = window.scrollY || document.documentElement.scrollTop;
+  (scrollLeft = window.scrollX || document.documentElement.scrollLeft),
+    // if any scroll is attempted,
+    // set this to the previous value
+    (window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    });
+}
+function enableScroll() {
+  window.onscroll = function () {};
+}
+
 const closeModal = function () {
   modal.classList.add('hidden');
+  enableScroll();
 };
 
 const openModal = function () {
   modal.classList.remove('hidden');
+  disableScroll();
 };
 
 menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('is-active');
-  mobileMenu.classList.toggle('is-selected');
+  if (
+    !(
+      menuToggle.classList.contains('is-active') &&
+      mobileMenu.classList.contains('is-selected')
+    )
+  ) {
+    menuToggle.classList.add('is-active');
+    mobileMenu.classList.add('is-selected');
+    disableScroll();
+  } else {
+    menuToggle.classList.remove('is-active');
+    mobileMenu.classList.remove('is-selected');
+    enableScroll();
+  }
+  // menuToggle.classList.toggle('is-active');
+  // mobileMenu.classList.toggle('is-selected');
+  // disableScroll();
 });
 
 async function logWeather() {
@@ -53,3 +84,14 @@ document.addEventListener('keydown', function (e) {
   }
 });
 // window.addEventListener('load', logWeather);
+
+// window.addEventListener('scroll', () => {
+//   if (menuToggle.style.display === 'block') {
+//     console.log(scrollY);
+//     if (scrollY > 119) {
+//       menuToggle.style.display = 'none';
+//     } else {
+//       menuToggle.style.display = 'block';
+//     }
+//   }
+// });
