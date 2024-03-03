@@ -1,2 +1,86 @@
 <% layout('layouts/boilerplate') %>
-<h1>Page loaded</h1>
+<div class="booking-body">
+  <div class="panel pricing-table">
+    <div class="pricing-plan">
+      <img src="/imgs/logo1.svg" alt="" class="pricing-img" />
+      <h2 class="pricing-header">Basic</h2>
+      <ul class="pricing-features">
+        <li class="pricing-features-item">
+          Most affordable Jurassic Park experience
+        </li>
+        <li class="pricing-features-item">
+          Does not include airfare, hotel, or meal tickets
+        </li>
+      </ul>
+      <span class="pricing-price">$500/day</span>
+      <a href="#/" class="pricing-button" id="basic-btn">Buy Now</a>
+    </div>
+
+    <div class="pricing-plan">
+      <img src="/imgs/logo1.svg" alt="" class="pricing-img" />
+      <h2 class="pricing-header">Silver</h2>
+      <ul class="pricing-features">
+        <li class="pricing-features-item">
+          A serious upgrade for serious adventurers
+        </li>
+        <li class="pricing-features-item">
+          Includes airfare, hotel, and meal tickets
+        </li>
+      </ul>
+      <span class="pricing-price">$1200/day</span>
+      <a href="#/" class="pricing-button is-featured" id="silver-btn"
+        >Buy Now</a
+      >
+    </div>
+
+    <div class="pricing-plan">
+      <img src="/imgs/logo1.svg" alt="" class="pricing-img" />
+      <h2 class="pricing-header">Gold</h2>
+      <ul class="pricing-features">
+        <li class="pricing-features-item">
+          The 'Greatest Adventure in History' words words
+        </li>
+        <li class="pricing-features-item">
+          Private suite, line passes and first class airfare
+        </li>
+      </ul>
+      <span class="pricing-price">$5000/day</span>
+      <a href="#/" class="pricing-button" id="gold-btn">Buy Now</a>
+    </div>
+  </div>
+  <div class="modal hidden" id="basic-modal">
+    <button class="close-modal">&times;</button>
+    <h2>Book your trip now</h2>
+    <div class="modal-section">
+      <label for="trip-length"
+        >How many days will you be at Jurassic Park?</label
+      >
+      <select name="trip-length" id="trip-length">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+    <div class="modal-section">
+      <label for="tickets">How many people are in your party?</label>
+      <select name="tickets" id="tickets">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10+">10+</option>
+      </select>
+    </div>
+    <div></div>
+    <a href="/booktrip" class="btn">Book Your Adventure</a>
+  </div>
+</div>
