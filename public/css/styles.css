@@ -121,20 +121,57 @@ main section.banner .home-container {
 }
 .dino-container {
   display: flex;
-  color: #eee;
+  color: #12002f;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  background: url('../imgs/aviary1.png');
+  height: 100vh;
+  background: url('../imgs/rexkingdom.png');
   background-size: cover;
 }
-.dino-container h1 {
+.dino-content {
+  background-color: #fff;
+  display: block;
+  text-align: center;
+  height: 60%;
+  width: 60%;
+  border-radius: 5px;
+  padding: 30px 25px;
+  opacity: 0.9;
+}
+.dino-header h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin: 1em;
+}
+.dino-table-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: inherit;
+}
+.dino-table-container-header h2 {
+  font-size: 26px;
+  font-weight: 300;
+  padding: 1em;
+}
+
+.dino-table-header {
+  font-size: 22px;
+}
+
+.dino-table-item {
+  text-decoration: none;
+  color: #12002f;
+  font-size: 18px;
+}
+/* .dino-container h1 {
   font-size: 96px;
   padding-bottom: 3rem;
   color: rgba(250, 101, 1, 0.85);
   text-shadow: 0.5px 0.5px 0 rgb(0, 0, 0);
-}
+} */
 .dino-container .dino-list {
   list-style: none;
 }
@@ -520,8 +557,8 @@ form .contact-btn input:hover {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 600px;
+  width: 30%;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -534,28 +571,56 @@ form .contact-btn input:hover {
 }
 .modal h2 {
   margin: 40px 40px;
-  font-size: 42px;
+  font-size: 26px;
   font-weight: 400;
   text-transform: uppercase;
 }
 .modal label {
-  margin-right: 15px;
+  margin-right: 5px;
+  font-size: 12px;
+  align-self: flex-start;
 }
 .modal-section {
-  font-size: 20px;
-  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  margin: 20px;
 }
 .modal option {
+  align-self: flex-end;
   width: 20px;
+  height: 15px;
   margin-left: 10px;
+}
+.btn-modal {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgb(250, 101, 1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
 }
 #tickets {
   width: 50px;
-  height: 30px;
+  height: 20px;
+  outline: auto;
+  align-self: flex-end;
 }
-#trip-length {
+.modal #trip-length {
   width: 50px;
-  height: 30px;
+  height: 20px;
+  outline: auto;
 }
 .close-modal {
   position: absolute;
@@ -609,6 +674,16 @@ form .contact-btn input:hover {
   .btn {
     margin-left: 32px;
   }
+  .home-container {
+    margin: 0px;
+    padding: 0px 0px;
+  }
+  .home-container h1 {
+    font-size: 46px;
+  }
+  #years {
+    font-size: 52px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -627,7 +702,7 @@ form .contact-btn input:hover {
   .hours {
     display: none;
   }
-  .container {
+  /* .container {
     padding-left: 32px;
     padding-right: 32px;
     justify-content: center;
@@ -638,6 +713,22 @@ form .contact-btn input:hover {
   }
   h3 {
     font-size: 25px;
+  } */
+  h1 {
+    font-size: 50px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  .home-container {
+    margin: 0px;
+    padding: 0px 0px;
+  }
+  .home-container h1 {
+    font-size: 46px;
+  }
+  #years {
+    font-size: 52px;
   }
 
   .nav-links-desktop {
@@ -673,6 +764,48 @@ form .contact-btn input:hover {
   #years {
     font-size: 52px;
   }
+  .modal {
+    height: 200px;
+    max-height: 100%;
+    justify-content: space-evenly;
+  }
+
+  .modal h2 {
+    display: none;
+  }
+  .modal label {
+    font-size: 12px;
+  }
+  .modal-section {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-basis: auto;
+    flex-shrink: 2;
+  }
+  .btn-modal {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    display: inline-block;
+    align-self: flex-end;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgb(250, 101, 1);
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    /* margin-top: 20px; */
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
   .container {
     padding-left: 32px;
     padding-right: 32px;
@@ -690,7 +823,7 @@ form .contact-btn input:hover {
     display: none;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1160px) {
   .panel {
     flex-direction: row;
     opacity: 0.9;

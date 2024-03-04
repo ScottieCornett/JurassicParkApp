@@ -14,8 +14,12 @@ const modal = document.querySelector('.modal');
 const tickets = document.getElementById('tickets');
 const total = document.getElementById('total');
 const tripLength = document.getElementById('trip-length');
+const modalBtn = document.getElementById('modal-btn');
 // const bookingBody = document.querySelector('.booking-body');
 const closeModalBtn = document.querySelector('.close-modal');
+let ticketVal = 1;
+let tripLengthVal = 1;
+let tripSelection = '';
 
 const time = new Date().getHours();
 parkOpen.textContent = time > 8 && time <= 19 ? 'Open' : 'Closed';
@@ -46,7 +50,6 @@ const openModal = function () {
 
   disableScroll();
 };
-
 menuToggle.addEventListener('click', () => {
   if (
     !(
@@ -67,6 +70,13 @@ menuToggle.addEventListener('click', () => {
   // disableScroll();
 });
 
+tickets.addEventListener('change', function () {
+  ticketVal = parseFloat(this.value);
+});
+tripLength.addEventListener('change', function () {
+  tripLengthVal = parseFloat(this.value);
+});
+
 async function logWeather() {
   const response = await fetch(
     'https://api.weatherbit.io/v2.0/current?city=sanjose&country=CR&key=48150379d462498986a030f6269f0052&units=I'
@@ -76,15 +86,49 @@ async function logWeather() {
   temp.textContent = `${temperature} F`;
 }
 
-basicBtn.addEventListener('click', openModal);
-silverBtn.addEventListener('click', openModal);
-goldBtn.addEventListener('click', openModal);
+basicBtn.addEventListener('click', () => {
+  openModal();
+  tripSelection = 'basic';
+});
+silverBtn.addEventListener('click', () => {
+  openModal();
+  tripSelection = 'silver';
+});
+goldBtn.addEventListener('click', () => {
+  openModal();
+  tripSelection = 'gold';
+});
+modalBtn.addEventListener('click', getTicketValue);
 closeModalBtn.addEventListener('click', closeModal);
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
   }
 });
+function getTicketValue() {
+  let price = 0;
+  switch (tripSelection) {
+    case 'basic':
+      price = 500;
+      break;
+    case 'silver':
+      price = 1200;
+      break;
+    case 'gold':
+      price = 5000;
+      break;
+    default:
+      price = 0;
+      break;
+  }
+  function calcPrice() {
+    let answer = ticketVal * price * tripLengthVal;
+    return answer;
+  }
+  let totalSale = calcPrice();
+
+  total.textContent = totalSale;
+}
 // window.addEventListener('load', logWeather);
 
 // window.addEventListener('scroll', () => {

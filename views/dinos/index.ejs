@@ -1,14 +1,41 @@
 <% layout('layouts/boilerplate') %> <% for (let dinosaur of dinosaurs) %>
 <div class="dino-container">
-  <h1>All Dinosaurs</h1>
-  <% for (let dinosaur of dinosaurs) { %>
-  <ul class="dino-list">
-    <li>
-      <a href="/dinosaurs/<%= dinosaur._id  %>">
-        <%=dinosaur.name %> - <%= dinosaur.species %></a
-      >
-    </li>
-  </ul>
-
-  <% } %>
+  <div class="dino-content">
+    <div class="dino-header">
+      <h1>Meet the Stars of Jurassic Park!</h1>
+      <p>
+        Sure, there are many valid reasons to visit Jurassic Park. A five-star
+        hotel, world-class dining, and an average daily temperature of 75
+        degrees fahrenheit... just to name a few. But let's be real -- our
+        dinosaurs are
+        <strong>the main attraction</strong>
+      </p>
+    </div>
+    <br />
+    <div class="dino-table-container-header">
+      <h2>Our Current Dinosaurs</h2>
+    </div>
+    <div class="dino-table-container">
+      <table class="dino-table">
+        <tr>
+          <th class="dino-table-header">Dino Name</th>
+          <th class="dino-table-header">Species</th>
+        </tr>
+        <% for (let dinosaur of dinosaurs) { %>
+        <tr>
+          <td>
+            <a href="/dinosaurs/<%= dinosaur._id  %>" class="dino-table-item"
+              ><%= dinosaur.name %></a
+            >
+          </td>
+          <td>
+            <a href="/dinosaurs/<%= dinosaur._id  %>" class="dino-table-item"
+              ><%= dinosaur.species %></a
+            >
+          </td>
+          <% } %>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
