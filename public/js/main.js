@@ -41,7 +41,9 @@ const closeModal = function () {
 };
 
 const openModal = function () {
+  document.documentElement.scrollTop = 0;
   modal.classList.remove('hidden');
+
   disableScroll();
 };
 

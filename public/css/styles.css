@@ -644,6 +644,52 @@ form .contact-btn input:hover {
     display: none;
   }
 }
+@media screen and (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+  .mobile-dropdown.is-selected {
+    opacity: 1;
+  }
+  .mobile-dropdown.is-selected a {
+    font-size: 20px;
+  }
+  .container.btn {
+    margin: 0 auto;
+  }
+  .weather {
+    display: none;
+  }
+  .hours {
+    display: none;
+  }
+  .home-container {
+    margin: 0px;
+    padding: 0px 0px;
+  }
+  .home-container h1 {
+    font-size: 46px;
+  }
+  #years {
+    font-size: 52px;
+  }
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+
+  .nav-links-desktop {
+    display: none;
+  }
+}
 @media (min-width: 1024px) {
   .panel {
     flex-direction: row;
