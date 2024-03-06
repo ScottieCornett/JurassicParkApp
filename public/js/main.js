@@ -25,6 +25,14 @@ const time = new Date().getHours();
 parkOpen.textContent = time > 8 && time <= 19 ? 'Open' : 'Closed';
 parkOpen.style.color = time > 8 && time <= 19 ? 'green' : 'red';
 
+window.addEventListener('scroll', () => {
+  if (scrollY > 0) {
+    menuToggle.style.opacity = 0;
+  } else {
+    menuToggle.style.opacity = 1;
+  }
+});
+
 function disableScroll() {
   // Get the current page scroll position
   scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -38,9 +46,11 @@ function disableScroll() {
 function enableScroll() {
   window.onscroll = function () {};
 }
+function resetOptions() {}
 
 const closeModal = function () {
   modal.classList.add('hidden');
+  location.reload();
   enableScroll();
 };
 
@@ -130,14 +140,3 @@ function getTicketValue() {
   total.textContent = totalSale;
 }
 // window.addEventListener('load', logWeather);
-
-// window.addEventListener('scroll', () => {
-//   if (menuToggle.style.display === 'block') {
-//     console.log(scrollY);
-//     if (scrollY > 119) {
-//       menuToggle.style.display = 'none';
-//     } else {
-//       menuToggle.style.display = 'block';
-//     }
-//   }
-// });

@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const bookTrip = require('./routes/bookTrip');
 const dinos = require('./routes/dinos');
 const contact = require('./routes/contact');
+const thanks = require('./routes/thanks');
 
 mongoose.connect('mongodb://127.0.0.1:27017/jurassicpark');
 const db = mongoose.connection;
@@ -23,6 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/booktrip', bookTrip);
 app.use('/dinosaurs', dinos);
 app.use('/contact', contact);
+app.use('/thanks', thanks);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));

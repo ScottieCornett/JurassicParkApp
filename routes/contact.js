@@ -13,7 +13,7 @@ router.post(
   wrapAsync(async (req, res, next) => {
     const contact = new Contact(req.body.contact);
     await contact.save();
-    res.redirect('/');
+    res.render('thankyou');
   })
 );
 

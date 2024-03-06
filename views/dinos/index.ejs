@@ -15,27 +15,35 @@
     <div class="dino-table-container-header">
       <h2>Our Current Dinosaurs</h2>
     </div>
-    <div class="dino-table-container">
+    <section class="dino-table-container">
       <table class="dino-table">
-        <tr>
-          <th class="dino-table-header">Dino Name</th>
-          <th class="dino-table-header">Species</th>
-        </tr>
-        <% for (let dinosaur of dinosaurs) { %>
-        <tr>
-          <td>
-            <a href="/dinosaurs/<%= dinosaur._id  %>" class="dino-table-item"
-              ><%= dinosaur.name %></a
-            >
-          </td>
-          <td>
-            <a href="/dinosaurs/<%= dinosaur._id  %>" class="dino-table-item"
-              ><%= dinosaur.species %></a
-            >
-          </td>
-          <% } %>
-        </tr>
+        <thead>
+          <tr>
+            <th class="dino-table-header">Dinosaur</th>
+            <th class="dino-table-header">Dino Name</th>
+            <th class="dino-table-header">Species</th>
+            <th class="dino-table-header">More Info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let dinosaur of dinosaurs) { %>
+          <tr>
+            <td>
+              <img
+                src="<%= dinosaur.image.url %>"
+                alt=""
+                class="dino-index-img"
+              />
+            </td>
+            <td class="dino-table-item"><%= dinosaur.name %></td>
+            <td class="dino-table-item"><%= dinosaur.species %></td>
+            <td class="dino-table-item">
+              <a href="/dinosaurs/<%= dinosaur._id  %>">Details</a>
+            </td>
+            <% } %>
+          </tr>
+        </tbody>
       </table>
-    </div>
+    </section>
   </div>
 </div>
