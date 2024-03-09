@@ -13,7 +13,7 @@ const seedDinos = async () => {
   await Dinosaur.insertMany([
     {
       name: 'Sue',
-      species: 'Tyrannosaurus Rex',
+      species: 'Tyrannosaurus',
       description:
         'The star of the show! Sue is a fearsome beast to behold. Gaze at your own risk!!',
       population: 1,

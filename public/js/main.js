@@ -25,6 +25,7 @@ const time = new Date().getHours();
 parkOpen.textContent = time > 8 && time <= 19 ? 'Open' : 'Closed';
 parkOpen.style.color = time > 8 && time <= 19 ? 'green' : 'red';
 
+window.addEventListener('load', logWeather);
 window.addEventListener('scroll', () => {
   if (scrollY > 0) {
     menuToggle.style.opacity = 0;
@@ -139,4 +140,3 @@ function getTicketValue() {
 
   total.textContent = totalSale;
 }
-// window.addEventListener('load', logWeather);

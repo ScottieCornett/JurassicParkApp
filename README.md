@@ -28,5 +28,5 @@ This project is the culmination of the knowledge I gained during the Web Develop
 
 ## Notes
 
-- The dinosaur database should seed automatically due to the scripts in the package.json file. If this does not happen, you will need to run 'seeds/dinoSeed.js' to seed the database.
+- The dinosaur database should seed automatically due to the scripts in the package.json file. If this does not happen, you will need to run 'node seeds/dinoSeed.js' to seed the database.
 - I have the port set to 3000. If you would like to use a different port, simply update the 'app.listen()' function in the index.js file.

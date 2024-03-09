@@ -42,6 +42,7 @@
   align-items: center;
   justify-content: center;
   height: 10%;
+  width: 100%;
   padding-bottom: 10px;
   margin-bottom: -5px;
   background: linear-gradient(
@@ -174,10 +175,11 @@ td {
 }
 .dino-index-img {
   height: 75px;
-  width: 75px;
-  border-radius: 50%;
+  width: 125px;
+  border-radius: 15%;
   margin-left: 0.5rem;
   vertical-align: middle;
+  z-index: 10;
 }
 .dino-table-header {
   font-size: 22px;
@@ -186,17 +188,23 @@ td {
 .dino-table-item {
   color: #12002f;
   font-size: 18px;
+  background-color: #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  opacity: 1;
 }
-.dino-table-item a {
+.dino-table-item:nth-of-type(5) {
+  border-right: 3px solid black;
+}
+.dino-details {
   text-decoration: none;
-  color: #12002f;
+  color: #fff;
+  background-color: rgb(40, 157, 224);
 }
-/* .dino-container h1 {
-  font-size: 96px;
-  padding-bottom: 3rem;
-  color: rgba(250, 101, 1, 0.85);
-  text-shadow: 0.5px 0.5px 0 rgb(0, 0, 0);
-} */
+.hide-desktop {
+  display: none;
+}
+
 .dino-container .dino-list {
   list-style: none;
 }
@@ -362,7 +370,7 @@ form .contact-btn input:hover {
 }
 .panel {
   background-color: white;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 15px 25px;
   width: 100%;
   max-width: 1100px;
@@ -688,6 +696,7 @@ form .contact-btn input:hover {
 .hidden {
   display: none;
 }
+
 @media screen and (max-width: 1279px) {
   .container.btn {
     margin: 0 auto;
@@ -766,6 +775,22 @@ form .contact-btn input:hover {
     padding: 10px 25px;
     margin: 20px 15px;
   }
+  .dino-header h1 {
+    font-size: 36px;
+  }
+  .dino-header p {
+    font-size: 16px;
+  }
+  .dino-table-item {
+    background-color: #fff;
+    font-size: 14px;
+  }
+  .dino-table-header {
+    font-size: 18px;
+  }
+  .dino-details {
+    background-color: rgb(40, 157, 224);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -810,12 +835,6 @@ form .contact-btn input:hover {
     font-size: 16px;
     padding: 20px 35px;
   }
-  .dino-container {
-    background: transparent;
-    display: flex;
-    flex-direction: row;
-  }
-
   .modal h2 {
     display: none;
   }
@@ -839,6 +858,13 @@ form .contact-btn input:hover {
     padding-right: 32px;
     justify-content: center;
   }
+  .dino-header {
+    display: none;
+  }
+  .hide-desktop {
+    display: block;
+    margin: 20px 40px;
+  }
 
   h1 {
     font-size: 50px;
@@ -851,10 +877,230 @@ form .contact-btn input:hover {
     display: none;
   }
 }
-@media (min-width: 1160px) {
+
+@media screen and (max-width: 550px) {
+  #hide-mobile-table {
+    display: none;
+  }
+
+  .dino-show-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .dino-card {
+    width: 500px;
+  }
+  .dino-img {
+    width: 100%;
+  }
+  /* .dino-index-img {
+    display: none;
+  }
+  .dino-table {
+    min-height: 95vh;
+  }
+  .dino-table-item {
+    word-spacing: 10px;
+  } */
+}
+
+@media screen and (max-width: 425px) {
+  .nav-container {
+    width: 100%;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .dino-container {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: auto;
+    overflow: hidden;
+  }
+  .dino-content {
+    width: 100%;
+    height: 100%;
+  }
+  .dino-table-container {
+    width: 100%;
+  }
+  .dino-card-header {
+    height: calc(30%);
+  }
+  .dino-show-body {
+    height: 40%;
+    width: 100%;
+  }
+  .dino-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0px;
+    height: 100%;
+    box-shadow: none;
+  }
+
+  .dino-card h1 {
+    font-size: 20px;
+    margin-top: 5jpx;
+  }
+  .dino-inner {
+    width: 360px;
+  }
+  .dino-img {
+    width: 380px;
+    height: 200px;
+    margin-bottom: 0;
+  }
+  .dino-table {
+    box-shadow: none;
+  }
+  .dino-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-basis: auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .contact-body {
+    display: flex;
+    flex-direction: column;
+    background: url('../imgs/control-bg.png');
+    width: 100%;
+  }
+  .contact-container {
+    background: url('../imgs/control-bg.png');
+    min-height: 100vh;
+  }
+  .contact-input {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+  }
+  .contact-title {
+    color: #fff;
+    text-align: center;
+  }
+  form .contact-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  form .contact-btn input {
+    width: 75%;
+    align-self: auto;
+    outline: none;
+    color: #12002f;
+    background-color: #fff;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav-container {
+    width: 100%;
+  }
+  .dino-container {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: auto;
+    overflow: hidden;
+  }
+  .dino-content {
+    width: 100%;
+    height: 100%;
+  }
+  .dino-table-container {
+    width: 100%;
+  }
+
+  .dino-show-body {
+    min-height: 100vh;
+    width: 100%;
+  }
+  .dino-card {
+    width: 100%;
+    padding: 10px 0px;
+    box-shadow: none;
+  }
+  .dino-card h1 {
+    font-size: 20px;
+    margin-top: 5jpx;
+  }
+  .dino-inner {
+    width: 360px;
+  }
+  .dino-img {
+    width: 300px;
+    height: 150px;
+    margin-bottom: 0;
+  }
+  .dino-table {
+    box-shadow: none;
+  }
+  .dino-wrap {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .contact-body {
+    display: flex;
+    flex-direction: column;
+    background: url('../imgs/control-bg.png');
+    width: 100%;
+    height: 100%;
+  }
+  .contact-container {
+    background: url('../imgs/control-bg.png');
+    height: 100%;
+  }
+  .contact-input {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+  .contact-title {
+    color: #fff;
+    text-align: center;
+  }
+  form .contact-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  form .contact-btn input {
+    width: 75%;
+    align-self: auto;
+    outline: none;
+    color: #12002f;
+    background-color: #fff;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 1160px) {
   .panel {
     flex-direction: row;
     opacity: 0.9;
+    border-radius: 10px;
   }
   .pricing-plan {
     border-bottom: none;

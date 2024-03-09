@@ -12,14 +12,12 @@
       </p>
     </div>
     <br />
-    <div class="dino-table-container-header">
-      <h2>Our Current Dinosaurs</h2>
-    </div>
+    <h2 class="hide-desktop">Our Current Dinos</h2>
     <section class="dino-table-container">
       <table class="dino-table">
         <thead>
-          <tr>
-            <th class="dino-table-header">Dinosaur</th>
+          <tr class="dino-row">
+            <th class="dino-table-header" id="hide-mobile-table">Dinosaur</th>
             <th class="dino-table-header">Dino Name</th>
             <th class="dino-table-header">Species</th>
             <th class="dino-table-header">More Info</th>
@@ -27,18 +25,24 @@
         </thead>
         <tbody>
           <% for (let dinosaur of dinosaurs) { %>
-          <tr>
-            <td>
+          <tr class="dino-row">
+            <td id="hide-mobile-table">
               <img
                 src="<%= dinosaur.image.url %>"
                 alt=""
                 class="dino-index-img"
               />
             </td>
-            <td class="dino-table-item"><%= dinosaur.name %></td>
-            <td class="dino-table-item"><%= dinosaur.species %></td>
-            <td class="dino-table-item">
-              <a href="/dinosaurs/<%= dinosaur._id  %>">Details</a>
+            <td><span class="dino-table-item"><%= dinosaur.name %></span></td>
+            <td>
+              <span class="dino-table-item"><%= dinosaur.species %></span>
+            </td>
+            <td>
+              <a
+                href="/dinosaurs/<%= dinosaur._id  %>"
+                class="dino-table-item dino-details"
+                >Details</a
+              >
             </td>
             <% } %>
           </tr>
