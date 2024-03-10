@@ -1,4 +1,4 @@
-# Jurassic Park | Code:You Capstone Propject
+# Jurassic Park | Code:You Capstone Project
 
 ## A functional website EXAMPLE project written using an Express server with Node.js
 
