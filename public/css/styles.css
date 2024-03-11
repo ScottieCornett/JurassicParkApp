@@ -448,21 +448,7 @@ form .contact-btn input:hover {
 .nav-item-desktop:hover {
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 5px rgb(255, 255, 255);
-  /* text-shadow: 0px 0px 2px rgb(218, 218, 218); */
-  /* border-bottom: 2px solid white; */
 }
-
-/* .drop-down-active {
-  display: flex;
-  border: 2px solid black;
-} */
-/* .plan-drop-down {
-  display: none;
-  position: absolute;
-  top: 245px;
-  padding-top: -1rem;
-  border: 1px solid black;
-} */
 
 .is-active {
   display: flex;
@@ -482,8 +468,6 @@ form .contact-btn input:hover {
   width: 60px;
   height: 60px;
   border-radius: 5px;
-  /* background-color: #2e3047; */
-  /* background-color: #aaa; */
   cursor: pointer;
 }
 .hamburger {
@@ -673,16 +657,6 @@ form .contact-btn input:hover {
   background: none;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
-  z-index: -1;
-}
 .basic-img {
   opacity: 0.7;
 }
@@ -753,7 +727,87 @@ form .contact-btn input:hover {
 .thank-you-inner li:last-of-type {
   padding-bottom: 2rem;
 }
-
+.error-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: url('../imgs/angryrex2.png');
+  background-size: cover;
+}
+.error-wrapper h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  padding: 2rem;
+}
+.error-wrapper h2 {
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  padding-bottom: 2rem;
+}
+.error-wrapper a {
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  background-color: rgb(250, 101, 1);
+  border-radius: 5px;
+  color: #fff;
+}
+.new-dino {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('../imgs/indombaby.png');
+  background-size: cover;
+}
+.new-dino h1 {
+  font-size: 42px;
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+.new-dino-form-wrapper {
+  width: 50%;
+  background-color: #fff;
+  height: 60%;
+  opacity: 0.8;
+  border-radius: 5px;
+  padding: 1em;
+}
+.new-dino-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.dino-form-item {
+  font-size: 24px;
+  padding-left: 6rem;
+  width: 50%;
+  height: 100%;
+}
+.dino-form-item:nth-of-type(3) {
+  height: 50%;
+}
+.dino-form-item:nth-of-type(5) {
+  padding-top: 2rem;
+}
+.new-btn {
+  padding: 1rem 1.5rem;
+  background-color: rgb(250, 101, 1);
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  border: none;
+}
 @media screen and (max-width: 1279px) {
   .container.btn {
     margin: 0 auto;
@@ -1199,6 +1253,26 @@ form .contact-btn input:hover {
     font-size: 1em;
     border: none;
     cursor: pointer;
+  }
+  .error-wrapper h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.5rem;
+  }
+  .error-wrapper h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    padding-bottom: 0.5rem;
+  }
+  .error-wrapper a {
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(250, 101, 1);
+    border-radius: 5px;
+    color: #fff;
   }
 }
 

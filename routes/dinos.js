@@ -8,6 +8,10 @@ router.get('/', async (req, res) => {
   res.render('dinos/index', { dinosaurs });
 });
 
+router.get('/new', (req, res) => {
+  res.render('dinos/new');
+});
+
 router.get(
   '/:id',
   wrapAsync(async (req, res) => {

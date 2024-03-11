@@ -1,0 +1,62 @@
+<% layout('layouts/boilerplate') %>
+<div class="new-dino">
+  <h1>New Dinosaur</h1>
+  <div class="new-dino-form-wrapper">
+    <form
+      action=""
+      method="POST"
+      class="new-dino-form"
+      enctype="multipart/form-data"
+    >
+      <div class="dino-form-item">
+        <label for="name" class="new-form-label">Name</label>
+        <input
+          type="text"
+          name="dinosaur[name]"
+          id="name"
+          class="new-form-input"
+          required
+        />
+      </div>
+      <div class="dino-form-item">
+        <label for="species" class="new-form-label">Species</label>
+        <input
+          type="text"
+          name="dinosaur[species]"
+          id="species"
+          class="new-form-input"
+          required
+        />
+      </div>
+      <div class="dino-form-item">
+        <label for="description" class="new-form-label">Description</label>
+      </div>
+      <div class="dino-form-item">
+        <textarea
+          name="dinosaur[description]"
+          id="description"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+      </div>
+      <div class="dino-form-item">
+        <label for="population" class="new-form-label">Population</label>
+        <input
+          type="number"
+          name="dinosaur[population]"
+          id="population"
+          class="new-form-input"
+          required
+        />
+      </div>
+      <div class="dino-form-item">
+        <label for="image">Image</label>
+        <input type="file" id="customFile" name="image" />
+      </div>
+      <div class="new-button">
+        <button class="new-btn">Add Dinosaur</button>
+      </div>
+    </form>
+  </div>
+</div>

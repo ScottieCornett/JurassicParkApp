@@ -3,6 +3,7 @@ const path = require('path');
 const engine = require('ejs-mate');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const ExpressError = require('./utils/ExpressError');
 const bookTrip = require('./routes/bookTrip');
 const dinos = require('./routes/dinos');
 const contact = require('./routes/contact');
@@ -33,9 +34,16 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.all('*', (req, res, next) => {
+  next(new ExpressError('Not Found', 404));
+});
+
 app.use((err, req, res, next) => {
-  const { status = 500, message = 'Something went wrong' } = err;
-  res.status(status).send(message);
+  const { statusCode = 500 } = err;
+  if (!err.message) {
+    err.message = 'Something went wrong';
+  }
+  res.status(statusCode).render('error', { err });
 });
 
 app.listen(3000, () => {
