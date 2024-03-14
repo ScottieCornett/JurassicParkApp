@@ -11,3 +11,11 @@ module.exports.validateContact = (req, res, next) => {
     next();
   }
 };
+
+module.exports.isLoggedIn = (req, res, next) => {
+  if (!req.isAuthenticated()) {
+    req.flash('error', 'You must be signed in first');
+    return res.redirect('/signin');
+  }
+  next();
+};

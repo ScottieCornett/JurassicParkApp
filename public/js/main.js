@@ -1,5 +1,3 @@
-// 'use strict';
-
 const menuToggle = document.querySelector('.menu-toggle');
 const temp = document.querySelector('.temperature');
 const weatherIcon = document.querySelector('.weather-icon');
@@ -17,6 +15,7 @@ const tripLength = document.getElementById('trip-length');
 const modalBtn = document.getElementById('modal-btn');
 // const bookingBody = document.querySelector('.booking-body');
 const closeModalBtn = document.querySelector('.close-modal');
+
 let ticketVal = 1;
 let tripLengthVal = 1;
 let tripSelection = '';
@@ -70,6 +69,7 @@ menuToggle.addEventListener('click', () => {
   ) {
     menuToggle.classList.add('is-active');
     mobileMenu.classList.add('is-selected');
+
     disableScroll();
   } else {
     menuToggle.classList.remove('is-active');
@@ -116,6 +116,7 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
 function getTicketValue() {
   let price = 0;
   switch (tripSelection) {

@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') %>
+<section class="register-body">
+  <h1>Register</h1>
+  <form action="/register" class="register-form" method="POST">
+    <div class="register-form-section">
+      <label for="username" class="register-label">Username</label>
+      <input
+        type="text"
+        class="register-input"
+        id="username"
+        name="username"
+        required
+      />
+    </div>
+    <div class="register-form-section">
+      <label for="email" class="register-label">Email</label>
+      <input
+        type="email"
+        class="register-input"
+        id="email"
+        name="email"
+        required
+      />
+    </div>
+    <div class="register-form-section">
+      <label for="password" class="register-label">Password</label>
+      <input
+        type="password"
+        class="register-input"
+        id="password"
+        name="password"
+        required
+      />
+    </div>
+    <button class="register-btn">Register</button>
+  </form>
+</section>
