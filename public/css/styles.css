@@ -293,6 +293,18 @@ td {
   text-transform: uppercase;
   color: #fff;
 }
+.dino-add-container {
+  padding-bottom: 1rem;
+}
+.dino-add-btn {
+  text-decoration: none;
+  background-color: rgb(111, 253, 111);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 20px;
+}
 .contact-body {
   max-width: 700px;
   width: 100%;
@@ -847,6 +859,12 @@ form .contact-btn input:hover {
 }
 .register-input {
   width: 200px;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.register-input:focus {
+  border: 2px solid rgb(250, 101, 1);
 }
 .register-form {
   display: flex;
@@ -873,20 +891,39 @@ form .contact-btn input:hover {
   /* display: flex;
   flex-direction: row;
   justify-content: center; */
-  color: red;
-  border: 1px solid red;
+  color: #fff;
+  border: 1px solid rgb(240, 61, 61);
+  background-color: rgb(240, 61, 61);
   position: absolute;
-  top: 22.5%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25%;
-  height: 20px;
+  height: 25px;
   text-align: center;
+  padding-top: 3px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.flash-success {
+  color: #fff;
+  border: 1px solid rgb(12, 209, 12);
+  background-color: rgb(12, 209, 12);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: 25px;
+  text-align: center;
+  padding-top: 5px;
+  z-index: 99;
+  border-radius: 5px;
 }
 .close-flash {
   outline: none;
   border: none;
-  color: red;
+  color: #fff;
   background: none;
   position: relative;
   height: 100%;

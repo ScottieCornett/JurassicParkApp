@@ -9,13 +9,16 @@ router.get('/register', (req, res) => {
 });
 router.post(
   '/register',
-  wrapAsync(async (req, res) => {
+  wrapAsync(async (req, res, next) => {
     try {
       const { email, username, password } = req.body;
       const user = new User({ email, username });
       const registeredUser = await User.register(user, password);
-      req.flash('success', 'Welcome to Jurassic Park!');
-      res.redirect('/');
+      req.login(registeredUser, (err) => {
+        if (err) return next(err);
+        req.flash('success', 'Welcome to Jurassic Park!');
+        res.redirect('/');
+      });
     } catch (e) {
       req.flash('error', 'Registration Failed!');
       res.redirect('register');
@@ -38,5 +41,15 @@ router.post(
     res.redirect('/dinosaurs');
   }
 );
+
+router.get('/logout', (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash('success', 'Goodbye!');
+    res.redirect('/signin');
+  });
+});
 
 module.exports = router;

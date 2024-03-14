@@ -13,6 +13,11 @@
     </div>
     <br />
     <h2 class="hide-desktop">Our Current Dinos</h2>
+    <div class="dino-add-container">
+      <% if (currentUser) { %>
+      <a href="dinosaurs/new" class="dino-add-btn">Add a New Dinosaur</a>
+      <% } %>
+    </div>
     <section class="dino-table-container">
       <table class="dino-table">
         <thead>

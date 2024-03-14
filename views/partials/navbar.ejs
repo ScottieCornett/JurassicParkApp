@@ -21,8 +21,14 @@
       <a href="/dinosaurs" class="nav-item-desktop">Meet Our Dinos!</a>
       <a href="/contact" class="nav-item-desktop">Contact Us</a>
     </div>
-    <span class="login-link"
-      ><a href="/register">Register</a> <a href="/signin">Sign In</a></span
-    >
+    <div class="login-link">
+      <% if(!currentUser) { %>
+      <a href="/register">Register</a>
+      <a href="/signin">Sign In</a>
+      <% } else { %>
+      <span>Hello, <%= currentUser.username %></span>
+      <a href="/logout">Logout</a>
+      <% } %>
+    </div>
   </header>
 </nav>
