@@ -15,15 +15,12 @@ const tripLength = document.getElementById('trip-length');
 const modalBtn = document.getElementById('modal-btn');
 // const bookingBody = document.querySelector('.booking-body');
 const closeModalBtn = document.querySelector('.close-modal');
-
 let ticketVal = 1;
 let tripLengthVal = 1;
 let tripSelection = '';
-
 const time = new Date().getHours();
 parkOpen.textContent = time > 8 && time <= 19 ? 'Open' : 'Closed';
 parkOpen.style.color = time > 8 && time <= 19 ? 'green' : 'red';
-
 // window.addEventListener('load', logWeather);
 window.addEventListener('scroll', () => {
   if (scrollY > 0) {
@@ -32,7 +29,6 @@ window.addEventListener('scroll', () => {
     menuToggle.style.opacity = 1;
   }
 });
-
 function disableScroll() {
   // Get the current page scroll position
   scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -46,18 +42,15 @@ function disableScroll() {
 function enableScroll() {
   window.onscroll = function () {};
 }
-function resetOptions() {}
 
 const closeModal = function () {
   modal.classList.add('hidden');
   location.reload();
   enableScroll();
 };
-
 const openModal = function () {
   document.documentElement.scrollTop = 0;
   modal.classList.remove('hidden');
-
   disableScroll();
 };
 menuToggle.addEventListener('click', () => {
@@ -69,25 +62,24 @@ menuToggle.addEventListener('click', () => {
   ) {
     menuToggle.classList.add('is-active');
     mobileMenu.classList.add('is-selected');
-
+    mobileMenu.classList.remove('no-click');
     disableScroll();
   } else {
     menuToggle.classList.remove('is-active');
     mobileMenu.classList.remove('is-selected');
+    mobileMenu.classList.add('no-click');
     enableScroll();
   }
   // menuToggle.classList.toggle('is-active');
   // mobileMenu.classList.toggle('is-selected');
   // disableScroll();
 });
-
 tickets.addEventListener('change', function () {
   ticketVal = parseFloat(this.value);
 });
 tripLength.addEventListener('change', function () {
   tripLengthVal = parseFloat(this.value);
 });
-
 async function logWeather() {
   const response = await fetch(
     'https://api.weatherbit.io/v2.0/current?city=sanjose&country=CR&key=48150379d462498986a030f6269f0052&units=I'
@@ -96,7 +88,6 @@ async function logWeather() {
   const temperature = weather.data[0].temp;
   temp.textContent = `${temperature} F`;
 }
-
 basicBtn.addEventListener('click', () => {
   openModal();
   tripSelection = 'basic';
@@ -116,7 +107,6 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
-
 function getTicketValue() {
   let price = 0;
   switch (tripSelection) {
@@ -138,6 +128,5 @@ function getTicketValue() {
     return answer;
   }
   let totalSale = calcPrice();
-
   total.textContent = totalSale;
 }
