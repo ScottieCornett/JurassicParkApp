@@ -12,3 +12,12 @@ module.exports.contactSchema = Joi.object({
     telephoneNumber: Joi.string(),
   }).required(),
 });
+
+module.exports.dinosaurSchema = Joi.object({
+  dinosaur: Joi.object({
+    name: Joi.string().required,
+    species: Joi.string().required,
+    description: Joi.string().required,
+    population: Joi.number().required(),
+  }).required(),
+});

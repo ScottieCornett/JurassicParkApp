@@ -1,12 +1,11 @@
 <% layout('layouts/boilerplate') %>
 <div class="new-dino">
   <div class="new-dino-form-wrapper">
-    <h1>New Dinosaur</h1>
+    <h1>Edit Dinosaur</h1>
     <form
-      action="/dinosaurs"
+      action="/dinosaurs/<%= dinosaur._id  %>?_method=PUT"
       method="POST"
       class="new-dino-form"
-      enctype="multipart/form-data"
     >
       <div class="dino-form-item">
         <label for="name" class="new-form-label">Name</label>
@@ -15,6 +14,7 @@
           name="dinosaur[name]"
           id="name"
           class="new-form-input"
+          value="<%= dinosaur.name  %>"
           required
         />
         <label for="species" class="new-form-label">Species</label>
@@ -23,6 +23,7 @@
           name="dinosaur[species]"
           id="species"
           class="new-form-input"
+          value="<%= dinosaur.species  %>"
           required
         />
       </div>
@@ -36,7 +37,9 @@
           cols="30"
           rows="10"
           required
-        ></textarea>
+        >
+<%= dinosaur.description  %></textarea
+        >
       </div>
       <div class="dino-form-item">
         <label for="population" class="new-form-label">Population</label>
@@ -45,15 +48,16 @@
           name="dinosaur[population]"
           id="population"
           class="new-form-input"
+          value="<%=dinosaur.population  %>"
           required
         />
       </div>
       <div class="dino-form-item">
-        <label for="image">Image</label>
-        <input type="file" id="customFile" name="image" />
+        <!-- <label for="image">Image</label>
+        <input type="file" id="customFile" name="image" /> -->
       </div>
       <div class="new-button">
-        <button class="new-btn">Add Dinosaur</button>
+        <button class="new-btn">Update Dinosaur</button>
       </div>
     </form>
   </div>

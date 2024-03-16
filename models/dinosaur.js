@@ -6,6 +6,10 @@ const DinosaurSchema = new Schema({
   species: String,
   description: String,
   population: Number,
+  admin: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
   image: {
     url: String,
     fileName: String,

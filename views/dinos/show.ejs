@@ -18,6 +18,20 @@
         </div>
         <div class="return-to-dinos">
           <a class="return-btn" href="/dinosaurs">Return to dino list</a>
+          <% if (currentUser && dinosaur.admin.equals(currentUser._id)) { %>
+          <a
+            class="return-btn"
+            id="dino-edit"
+            href="/dinosaurs/<%=dinosaur._id  %>/edit"
+            >Edit</a
+          >
+          <form
+            action="/dinosaurs/<%=dinosaur._id  %>/?_method=DELETE"
+            method="POST"
+          >
+            <button class="return-btn" id="dino-delete">Delete</button>
+          </form>
+          <% } %>
         </div>
       </div>
     </div>

@@ -38,7 +38,9 @@ router.post(
   }),
   (req, res) => {
     req.flash('success', 'Welcome Back!');
-    res.redirect('/dinosaurs');
+    const redirectUrl = req.session.returnTo || '/';
+    delete req.session.returnTo;
+    res.redirect(redirectUrl);
   }
 );
 

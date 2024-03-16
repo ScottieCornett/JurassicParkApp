@@ -1,4 +1,4 @@
-<% layout('layouts/boilerplate') %> <% for (let dinosaur of dinosaurs) %>
+<% layout('layouts/boilerplate') %>
 <div class="dino-container">
   <div class="dino-content">
     <div class="dino-header">
@@ -13,11 +13,6 @@
     </div>
     <br />
     <h2 class="hide-desktop">Our Current Dinos</h2>
-    <div class="dino-add-container">
-      <% if (currentUser) { %>
-      <a href="dinosaurs/new" class="dino-add-btn">Add a New Dinosaur</a>
-      <% } %>
-    </div>
     <section class="dino-table-container">
       <table class="dino-table">
         <thead>
@@ -54,5 +49,10 @@
         </tbody>
       </table>
     </section>
+  </div>
+  <div class="dino-add-container">
+    <% if (currentUser && dinosaurs[0].admin.equals(currentUser._id)) { %>
+    <a href="dinosaurs/new" class="dino-add-btn">Add a New Dinosaur</a>
+    <% } %>
   </div>
 </div>

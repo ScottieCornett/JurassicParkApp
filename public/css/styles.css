@@ -279,7 +279,7 @@ td {
 }
 .return-to-dinos {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 20px 0px;
@@ -288,10 +288,29 @@ td {
 .return-to-dinos a {
   text-decoration: none;
   padding: 10px;
+  margin-left: 15px;
   border-radius: 5px;
   background-color: rgb(250, 101, 1);
   text-transform: uppercase;
   color: #fff;
+}
+.return-to-dinos #dino-edit {
+  background-color: rgb(5, 140, 250);
+  width: 60px;
+  text-align: center;
+}
+.return-to-dinos #dino-delete {
+  background-color: rgb(241, 7, 7);
+  width: 90px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-left: 15px;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 .dino-add-container {
   padding-bottom: 1rem;
@@ -792,42 +811,47 @@ form .contact-btn input:hover {
   height: 100vh;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: url('../imgs/indombaby.png');
+  background-size: cover;
+  font-size: 1.5rem;
+}
+.new-dino h1 {
+  font-size: 2em;
+  font-weight: 600;
+  padding-bottom: 2rem;
+  position: relative;
+}
+.new-dino-form-wrapper {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('../imgs/indombaby.png');
-  background-size: cover;
-}
-.new-dino h1 {
-  font-size: 42px;
-  font-weight: 600;
-  padding-bottom: 2rem;
-}
-.new-dino-form-wrapper {
   width: 50%;
   background-color: #fff;
-  height: 60%;
   opacity: 0.8;
   border-radius: 5px;
-  padding: 1em;
+  padding: 25px 30px;
 }
 .new-dino-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
 }
 .dino-form-item {
-  font-size: 24px;
-  padding-left: 6rem;
-  width: 50%;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  width: 100%;
   height: 100%;
 }
-.dino-form-item:nth-of-type(3) {
-  height: 50%;
+.dino-form-item #description {
+  width: 100%;
 }
+
 .dino-form-item:nth-of-type(5) {
   padding-top: 2rem;
 }
@@ -888,9 +912,6 @@ form .contact-btn input:hover {
   cursor: pointer;
 }
 .flash-error {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center; */
   color: #fff;
   border: 1px solid rgb(240, 61, 61);
   background-color: rgb(240, 61, 61);
@@ -1399,6 +1420,9 @@ form .contact-btn input:hover {
     color: #fff;
   }
   .login-link a {
+    font-size: 12px;
+  }
+  .login-link span {
     font-size: 12px;
   }
 }
