@@ -21,14 +21,6 @@ module.exports.validateContact = (req, res, next) => {
 //   }
 // };
 
-module.exports.isAdmin = async (req, res, next) => {
-  if (!req.session.user.isAdmin) {
-    req.flash('error', 'You do not have permission to do that');
-    return res.redirect(`/signin`);
-  }
-  next();
-};
-
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.session.user) {
     req.session.returnTo = req.originalUrl;

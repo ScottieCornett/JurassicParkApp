@@ -1,6 +1,6 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const temp = document.querySelector('.temperature');
-const weatherIcon = document.querySelector('.weather-icon');
+const weatherImg = document.getElementById('weather-image');
 const mobileMenu = document.querySelector('.mobile-dropdown');
 const mobileLink = document.querySelectorAll('.link-item-mobile');
 const navItemDesktop = document.querySelectorAll('.nav-item-desktop');
@@ -86,7 +86,9 @@ async function logWeather() {
   );
   const weather = await response.json();
   const temperature = weather.data[0].temp;
+  const icon = weather.data[0].weather.icon;
   temp.textContent = `${temperature} F`;
+  weatherImg.src = `/icons/${icon}.png`;
 }
 basicBtn.addEventListener('click', () => {
   openModal();

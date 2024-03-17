@@ -10,7 +10,14 @@
   box-sizing: 0;
   font-family: var(--main-font);
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+}
+.img {
+  display: block;
+  max-width: 100%;
+}
 .home-container {
   width: 100%;
   max-width: 1600px;
@@ -59,17 +66,22 @@
   width: 100%;
   height: 40px;
   list-style: none;
-  /* border: 1px solid black; */
 }
 
 .nav-item-desktop {
   font-size: 25px;
   font-family: var(--main-font);
-  /* color: rgb(240, 245, 255); */
+  border-bottom: 2px solid transparent;
   color: rgba(210, 210, 210, 1);
   text-decoration: none;
   font-weight: 400;
   cursor: pointer;
+}
+.nav-item-desktop:hover {
+  color: #fff;
+  /* text-shadow: 2px 2px 5px #fff; */
+  border-bottom: 2px solid #fff;
+  transition: all 0.1s ease-in;
 }
 main section.banner {
   color: #fff;
@@ -404,9 +416,12 @@ form .contact-btn input:hover {
 }
 .panel {
   background-color: #eee;
-  padding: 15px 25px;
+  padding: 1rem 4em;
   width: 100%;
   max-width: 1100px;
+  flex-basis: auto;
+  flex-shrink: 2;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -421,7 +436,7 @@ form .contact-btn input:hover {
 }
 .pricing-img {
   margin-bottom: 25px;
-  width: 220px;
+  width: 200px;
   margin-top: 10px;
 }
 .pricing-header {
@@ -470,15 +485,11 @@ form .contact-btn input:hover {
 
 .pricing-button.is-featured {
   background-color: #12002f;
-  color: white;
+  color: #fff;
 }
 .pricing-button.is-featured:hover,
 .pricing-button.is-featured:focus {
   background-color: #aaa;
-}
-.nav-item-desktop:hover {
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 2px 5px rgb(255, 255, 255);
 }
 
 .is-active {
@@ -486,7 +497,7 @@ form .contact-btn input:hover {
   opacity: 1;
 }
 .is-active:hover {
-  border: 1px solid black;
+  border: 1px solid #000;
   height: 50px;
   width: 50px;
 }
@@ -548,6 +559,10 @@ form .contact-btn input:hover {
   margin-top: 10px;
   margin-left: 10px;
 }
+#weather-image {
+  height: 20px;
+  width: 20px;
+}
 .hours {
   z-index: 99 !important;
   position: absolute;
@@ -564,7 +579,7 @@ form .contact-btn input:hover {
   right: 0;
   top: 0;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 1.5rem;
 }
 .login-link a {
   text-decoration: none;
@@ -592,7 +607,6 @@ form .contact-btn input:hover {
     rgba(255, 29, 24, 1),
     rgba(240, 184, 62, 1)
   );
-  border: 1px solid black;
   z-index: 10;
   box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.4);
 }
@@ -601,6 +615,7 @@ form .contact-btn input:hover {
   text-align: center;
   text-decoration: none;
   background: none;
+  border-bottom: 2px solid transparent;
   width: 100%;
   padding: 15px 0px;
   color: var(--darkgray);
@@ -610,8 +625,8 @@ form .contact-btn input:hover {
 }
 .mobile-dropdown > a:hover {
   width: 40%;
+  transition: all 0.2s ease;
   border-bottom: 2px solid black;
-  margin-top: 2px;
 }
 
 .is-selected {
@@ -635,13 +650,13 @@ form .contact-btn input:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30%;
-  height: 300px;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  padding: 6rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
@@ -654,7 +669,7 @@ form .contact-btn input:hover {
 }
 .modal label {
   margin-right: 5px;
-  font-size: 12px;
+  font-size: 16px;
   align-self: flex-start;
 }
 .modal-section {
@@ -706,7 +721,7 @@ form .contact-btn input:hover {
   height: 20px;
   outline: auto;
 }
-.close-modal {
+/* .close-modal {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
@@ -715,6 +730,19 @@ form .contact-btn input:hover {
   cursor: pointer;
   border: none;
   background: none;
+} */
+
+.close-modal {
+  position: relative;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  columns: #333;
+  font-size: 60px;
+  cursor: pointer;
+}
+.close-modal:hover {
+  color: #777;
 }
 
 .basic-img {
@@ -874,29 +902,22 @@ form .contact-btn input:hover {
   border: none;
 }
 .register-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
+  height: 100vh;
   width: 100%;
 }
 .register-body h1 {
+  text-align: center;
   font-weight: 400;
   font-size: 50px;
-  margin-bottom: 40px;
+  padding: 2rem;
 }
+
 .register-label,
 .register-input {
   height: 30px;
   margin: 10px;
 }
-.register-input {
-  width: 200px;
-  outline: none;
-  border-radius: 5px;
-  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
-}
+
 .register-input:focus {
   border: 2px solid rgb(250, 101, 1);
 }
@@ -905,12 +926,27 @@ form .contact-btn input:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  margin: 0 auto;
+  width: 75%;
+}
+.register-input {
+  width: 40%;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+  align-self: flex-end;
+  padding-left: 0.5rem;
 }
 .register-form-section {
-  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: flex-end;
   margin-bottom: 40px;
-  padding-right: 8rem;
+  width: 100%;
+}
+.register-form-section #email {
+  margin-left: 25px;
 }
 .register-btn {
   padding: 1rem 1.5rem;
@@ -926,10 +962,10 @@ form .contact-btn input:hover {
   border: 1px solid rgb(240, 61, 61);
   background-color: rgb(240, 61, 61);
   position: absolute;
-  top: 20%;
+  top: 3%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 25%;
+  width: 40%;
   height: 25px;
   text-align: center;
   padding-top: 3px;
@@ -941,7 +977,7 @@ form .contact-btn input:hover {
   border: 1px solid rgb(12, 209, 12);
   background-color: rgb(12, 209, 12);
   position: absolute;
-  top: 20%;
+  top: 3%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25%;
@@ -950,6 +986,7 @@ form .contact-btn input:hover {
   padding-top: 5px;
   z-index: 99;
   border-radius: 5px;
+  opacity: 0.95;
 }
 .close-flash {
   outline: none;
@@ -1145,6 +1182,50 @@ form .contact-btn input:hover {
 
   .nav-links-desktop {
     display: none;
+  }
+  .register-body h1 {
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  .register-label,
+  .register-input {
+    height: 20px;
+    margin: 10px;
+    padding-left: 0.5rem;
+  }
+  .flash-error {
+    color: #fff;
+    border: 1px solid rgb(240, 61, 61);
+    background-color: rgb(240, 61, 61);
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    padding-top: 3px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+  }
+  .flash-success {
+    color: #fff;
+    border: 1px solid rgb(12, 209, 12);
+    background-color: rgb(12, 209, 12);
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    padding-top: 5px;
+    z-index: 99;
+    border-radius: 5px;
+    opacity: 0.95;
   }
 }
 
@@ -1355,6 +1436,8 @@ form .contact-btn input:hover {
   .contact-body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: url('../imgs/control-bg.png');
     width: 100%;
     height: 100vh;
@@ -1362,6 +1445,9 @@ form .contact-btn input:hover {
   .contact-container {
     height: 100%;
     overflow: hidden;
+    flex-shrink: 2;
+    flex-grow: auto;
+    flex-grow: 1;
     padding-top: 3rem;
   }
   .contact-input {
@@ -1434,6 +1520,14 @@ form .contact-btn input:hover {
   }
   .login-link span {
     font-size: 12px;
+  }
+  .logout-link-btn {
+    font-size: 12px;
+    height: 10px;
+    padding-bottom: 1rem;
+  }
+  .greeting {
+    display: none;
   }
 }
 

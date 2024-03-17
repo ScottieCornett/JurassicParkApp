@@ -12,11 +12,12 @@ router.get('/', async (req, res) => {
   res.render('dinos/index', { dinosaurs });
 });
 
-router.get('/new', isAdmin, (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
   res.render('dinos/new');
 });
 router.post(
   '/',
+  isLoggedIn,
   upload.single('image'),
   wrapAsync(async (req, res, next) => {
     const dinosaur = new Dinosaur(req.body.dinosaur);
@@ -38,7 +39,7 @@ router.get(
 );
 router.get(
   '/:id/edit',
-  isAdmin,
+  isLoggedIn,
   wrapAsync(async (req, res) => {
     const { id } = req.params;
     const dinosaur = await Dinosaur.findById(id);
@@ -51,7 +52,7 @@ router.get(
 );
 router.put(
   '/:id',
-  isAdmin,
+  isLoggedIn,
   upload.single('image'),
   wrapAsync(async (req, res, next) => {
     const { id } = req.params;
@@ -69,6 +70,7 @@ router.put(
 );
 router.delete(
   '/:id',
+  isLoggedIn,
   wrapAsync(async (req, res) => {
     const { id } = req.params;
     await Dinosaur.findByIdAndDelete(id);
