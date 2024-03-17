@@ -21,15 +21,13 @@ module.exports.validateContact = (req, res, next) => {
 //   }
 // };
 
-// module.exports.isAdmin = async (req, res, next) => {
-//   const { id } = req.params;
-//   const dinosaur = await Dinosaur.findById(id);
-//   if (!dinosaur.admin.equals(req.user._id)) {
-//     req.flash('error', 'You do not have permission to do that');
-//     return res.redirect(`/dinosaurs/${id}`);
-//   }
-//   next();
-// };
+module.exports.isAdmin = async (req, res, next) => {
+  if (!req.session.user.isAdmin) {
+    req.flash('error', 'You do not have permission to do that');
+    return res.redirect(`/signin`);
+  }
+  next();
+};
 
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.session.user) {

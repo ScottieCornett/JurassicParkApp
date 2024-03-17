@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   res.render('dinos/index', { dinosaurs });
 });
 
-router.get('/new', (req, res) => {
+router.get('/new', isAdmin, (req, res) => {
   res.render('dinos/new');
 });
 router.post(
@@ -38,6 +38,7 @@ router.get(
 );
 router.get(
   '/:id/edit',
+  isAdmin,
   wrapAsync(async (req, res) => {
     const { id } = req.params;
     const dinosaur = await Dinosaur.findById(id);
@@ -50,15 +51,17 @@ router.get(
 );
 router.put(
   '/:id',
+  isAdmin,
   upload.single('image'),
   wrapAsync(async (req, res, next) => {
     const { id } = req.params;
     const dinosaur = await Dinosaur.findByIdAndUpdate(id, {
       ...req.body.dinosaur,
     });
-
-    dinosaur.image.url = req.file.path;
-    dinosaur.image.fileName = req.file.filename;
+    if (req.file) {
+      dinosaur.image.url = req.file.path;
+      dinosaur.image.fileName = req.file.filename;
+    }
     await dinosaur.save();
     req.flash('success', 'You successfully updated a dinosaur');
     res.redirect(`/dinosaurs/${dinosaur._id}`);
