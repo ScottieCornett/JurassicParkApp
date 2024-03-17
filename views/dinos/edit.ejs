@@ -6,6 +6,7 @@
       action="/dinosaurs/<%= dinosaur._id  %>?_method=PUT"
       method="POST"
       class="new-dino-form"
+      enctype="multipart/form-data"
     >
       <div class="dino-form-item">
         <label for="name" class="new-form-label">Name</label>
@@ -53,8 +54,8 @@
         />
       </div>
       <div class="dino-form-item">
-        <!-- <label for="image">Image</label>
-        <input type="file" id="customFile" name="image" /> -->
+        <label for="image">Image</label>
+        <input type="file" id="image" name="image" />
       </div>
       <div class="new-button">
         <button class="new-btn">Update Dinosaur</button>

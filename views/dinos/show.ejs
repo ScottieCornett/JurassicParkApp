@@ -18,7 +18,7 @@
         </div>
         <div class="return-to-dinos">
           <a class="return-btn" href="/dinosaurs">Return to dino list</a>
-          <% if (currentUser && dinosaur.admin.equals(currentUser._id)) { %>
+          <% if (currentUser && currentUser.isAdmin) { %>
           <a
             class="return-btn"
             id="dino-edit"

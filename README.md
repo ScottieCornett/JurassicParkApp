@@ -15,7 +15,7 @@ This project is the culmination of the knowledge I gained during the Web Develop
 - Used media queries in CSS to make the site responsive
 - Used JavaScript to functionality to the site content
 
-* Used EJS to render HTML templates
+* Used npm packages such as bcrypt for password hashing and EJS for HTML templating
 
 ## How to install and run this project
 
@@ -23,10 +23,21 @@ This project is the culmination of the knowledge I gained during the Web Develop
 2. Install Node and MongoDB on your machine
 3. Open a terminal in VSCode or navigate to the root folder in a terminal
 4. Run 'npm install' to update the npm packages
-5. Run 'npm start' to start the server
-6. Open a browser and navigate to 'localhost:3000'
+5. Run 'node seeds/adminSeed.js' to seed the admin user, then close 'Ctrl + C' to stop the application
+6. Run 'npm start' to start the server
+7. Open a browser and navigate to 'localhost:3000'
 
 ## Notes
 
 - The dinosaur database should seed automatically due to the scripts in the package.json file. If this does not happen, you will need to run 'node seeds/dinoSeed.js' to seed the database.
 - I have the port set to 3000. If you would like to use a different port, simply update the 'app.listen()' function in the index.js file.
+
+- To access the CRUD functionality of the dinosaurs, you need to :
+
+1. Have a Cloudinary cloud account
+2. Sign in to the application using the credentials 'admin' as both the username and password
+3. Set a .env file in the root directory of the file with the following fields :
+
+CLOUDINARY_CLOUD_NAME = 'Your Cloudinary Cloud name'
+CLOUDINARY_KEY = 'Your Cloudinary API Key'
+COULDINARY_SECRET = 'You Cloudinary API secret'

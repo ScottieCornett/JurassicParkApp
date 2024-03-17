@@ -51,7 +51,7 @@
     </section>
   </div>
   <div class="dino-add-container">
-    <% if (currentUser && dinosaurs[0].admin.equals(currentUser._id)) { %>
+    <% if (currentUser && currentUser.isAdmin) { %>
     <a href="dinosaurs/new" class="dino-add-btn">Add a New Dinosaur</a>
     <% } %>
   </div>
