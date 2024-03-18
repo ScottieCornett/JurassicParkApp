@@ -50,9 +50,12 @@
       </table>
     </section>
   </div>
+  <% if (currentUser && currentUser.isAdmin) { %>
   <div class="dino-add-container">
-    <% if (currentUser && currentUser.isAdmin) { %>
+    <span class="add-dino-version"
+      >JPSys Version 2.1.1 -- Editing as <%= currentUser.email %></span
+    >
     <a href="dinosaurs/new" class="dino-add-btn">Add a New Dinosaur</a>
-    <% } %>
   </div>
+  <% } %>
 </div>

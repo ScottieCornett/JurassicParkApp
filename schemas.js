@@ -10,6 +10,7 @@ module.exports.contactSchema = Joi.object({
     state: Joi.string().required(),
     zipCode: Joi.string().required(),
     telephoneNumber: Joi.string(),
+    comments: Joi.string(),
   }).required(),
 });
 

@@ -1,91 +1,117 @@
 <% layout('layouts/boilerplate') %>
-<div class="contact-container">
-  <div class="contact-body">
-    <div class="contact-title">Contact Us</div>
-    <form action="/contact" method="POST">
-      <div class="contact-details">
-        <div class="contact-input">
-          <label for="contact-first-name" class="details">First Name</label>
+<div class="new-contact">
+  <div class="new-dino-form-wrapper">
+    <h1>Contact Us</h1>
+    <p>
+      Have questions? Our team is here to help. Leave your information and a
+      Jurassic Park Adventure Specialist will reach out to you.
+    </p>
+    <form action="/contact" method="POST" class="new-dino-form">
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="firstName" class="new-form-label">First Name</label>
           <input
             type="text"
-            id="contact-full-name"
-            placeholder="Enter your first name"
             name="contact[firstName]"
+            id="firstName"
+            class="new-form-input"
             required
           />
         </div>
-        <div class="contact-input">
-          <label for="contact-last-name" class="details">Last Name</label>
+        <div class="new-form-column">
+          <label for="lastName" class="new-form-label">Last Name</label>
           <input
             type="text"
-            id="contact-last-name"
-            placeholder="Enter your last name"
             name="contact[lastName]"
+            id="lastName"
+            class="new-form-input"
             required
-          />
-        </div>
-        <div class="contact-input">
-          <label for="contact-email" class="details">Email</label>
-          <input
-            type="text"
-            id="contact-email"
-            placeholder="Enter your email"
-            name="contact[email]"
-            required
-          />
-        </div>
-        <div class="contact-input">
-          <label for="contact-address" class="details">Address</label>
-          <input
-            type="text"
-            id="contact-address"
-            placeholder="Enter your address"
-            name="contact[streetAddress]"
-            required
-          />
-        </div>
-        <div class="contact-input">
-          <label for="contact-city" class="details">City</label>
-          <input
-            type="text"
-            id="contact-city"
-            placeholder="Enter your city"
-            name="contact[city]"
-            required
-          />
-        </div>
-        <div class="contact-input">
-          <label for="contact-state" class="details">State</label>
-          <input
-            type="text"
-            id="contact-state"
-            placeholder="Enter your state"
-            name="contact[state]"
-            required
-          />
-        </div>
-        <div class="contact-input">
-          <label for="contact-zipcode" class="details">Zip Code</label>
-          <input
-            type="text"
-            id="contact-zipcode"
-            placeholder="Enter your zip code"
-            name="contact[zipCode]"
-            required
-          />
-        </div>
-        <div class="contact-input">
-          <label for="contact-phone" class="details">Phone Number</label>
-          <input
-            type="text"
-            id="contact-phone"
-            placeholder="(Optional) Enter your phone number"
-            name="contact[telephoneNumber]"
           />
         </div>
       </div>
-      <div class="contact-btn">
-        <input type="submit" value="Submit" />
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="email" class="new-form-label">Email</label>
+          <input
+            type="text"
+            name="contact[email]"
+            id="email"
+            class="new-form-input"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="address" class="new-form-label">Address</label>
+          <input
+            type="text"
+            name="contact[streetAddress]"
+            id="address"
+            class="new-form-input"
+            required
+          />
+        </div>
+      </div>
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="city" class="new-form-label">City</label>
+          <input
+            type="text"
+            name="contact[city]"
+            id="city"
+            class="new-form-input"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="state" class="new-form-label">State</label>
+          <input
+            type="text"
+            name="contact[state]"
+            id="state"
+            class="new-form-input"
+            required
+          />
+        </div>
+      </div>
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="zipCode" class="new-form-label">Zip Code</label>
+          <input
+            type="text"
+            name="contact[zipCode]"
+            id="zipCode"
+            class="new-form-input"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="telephoneNumber" class="new-form-label"
+            >Phone Number</label
+          >
+          <input
+            type="text"
+            name="contact[telephoneNumber]"
+            id="telephoneNumber"
+            class="new-form-input"
+            required
+          />
+        </div>
+      </div>
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="comments" class="new-form-label"
+            >Questions/Comments</label
+          >
+          <textarea
+            name="contact[comments]"
+            id="comments"
+            cols="30"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+      <div class="new-button">
+        <button class="new-btn">Submit</button>
       </div>
     </form>
   </div>

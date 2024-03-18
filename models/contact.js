@@ -10,6 +10,7 @@ const ContactSchema = new Schema({
   state: String,
   zipCode: String,
   telephoneNumber: String,
+  comments: String,
 });
 
 module.exports = mongoose.model('Contact', ContactSchema);
