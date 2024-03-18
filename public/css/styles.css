@@ -310,6 +310,7 @@ td {
   background-color: rgb(5, 140, 250);
   width: 60px;
   text-align: center;
+  cursor: pointer;
 }
 .return-to-dinos #dino-delete {
   background-color: rgb(241, 7, 7);
@@ -322,6 +323,7 @@ td {
   margin-left: 15px;
   padding: 10px;
   font-size: 16px;
+  cursor: pointer;
   text-transform: uppercase;
 }
 .dino-add-container {
@@ -377,9 +379,8 @@ form .contact-details .contact-input {
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
-.contact-details .contact-input input:focus,
-.contact-details .contact-input input:valid {
-  border-color: #12002f;
+.contact-details .contact-input input:focus {
+  border-color: rgb(250, 101, 1);
 }
 
 form .contact-btn {
@@ -856,43 +857,67 @@ form .contact-btn input:hover {
   background-size: cover;
   font-size: 1.5rem;
 }
-.new-dino h1 {
-  font-size: 2em;
-  font-weight: 600;
-  padding-bottom: 2rem;
-  position: relative;
-}
 .new-dino-form-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
   background-color: #fff;
-  opacity: 0.8;
-  border-radius: 5px;
-  padding: 25px 30px;
+  width: 75%;
+  min-width: 350px;
+  padding: 35px 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 10px;
+  box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.2);
+}
+.new-dino-form-wrapper h1 {
+  font-size: 30px;
+  text-align: center;
+  color: #12002f;
+}
+.new-dino-form-wrapper p {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  color: #2e3047;
+  font-size: 14px;
+  font-weight: 400;
 }
 .new-dino-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.dino-form-item {
-  flex-wrap: nowrap;
-  font-size: 16px;
   width: 100%;
-  height: 100%;
+  position: relative;
+  margin: 30px auto 0 auto;
 }
-.dino-form-item #description {
+.new-form-row {
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px 30px;
+  margin-bottom: 20px;
+}
+.new-form-column label {
+  font-size: 14px;
+  color: #12002f;
+  font-weight: 600;
+}
+.new-form-column textarea,
+.new-form-column input {
+  width: 100%;
+  font-weight: 400;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1.2px solid #c4cae0;
+  margin-top: 5px;
+}
+.new-form-column textarea {
+  resize: none;
+}
+.new-form-column textarea:focus,
+.new-form-column input:focus {
+  outline: none;
+  border-color: rgb(250, 101, 1);
 }
 
-.dino-form-item:nth-of-type(5) {
-  padding-top: 2rem;
-}
 .new-btn {
   padding: 1rem 1.5rem;
   background-color: rgb(250, 101, 1);
@@ -900,6 +925,8 @@ form .contact-btn input:hover {
   color: #fff;
   outline: none;
   border: none;
+  cursor: pointer;
+  float: right;
 }
 .register-body {
   height: 100vh;
