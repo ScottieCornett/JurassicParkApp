@@ -1,46 +1,29 @@
 <% layout('layouts/boilerplate') %>
-<div class="dino-container">
-  <div class="dino-content">
-    <div class="dino-header">
-      <h1>Meet the Stars of Jurassic Park!</h1>
-      <p>
-        Sure, there are many valid reasons to visit Jurassic Park. A five-star
-        hotel, world-class dining, and an average daily temperature of 75
-        degrees fahrenheit... just to name a few. But let's be real -- our
-        dinosaurs are
-        <strong>the main attraction</strong>
-      </p>
-    </div>
-    <br />
-    <h2 class="hide-desktop">Our Current Dinos</h2>
-    <section class="dino-table-container">
+<div class="dino-body">
+  <main class="table">
+    <section class="table_header">
+      <h2>Meet the Stars of Jurassic Park!</h2>
+    </section>
+    <section class="table_body">
       <table class="dino-table">
         <thead>
-          <tr class="dino-row">
-            <th class="dino-table-header" id="hide-mobile-table">Dinosaur</th>
-            <th class="dino-table-header">Dino Name</th>
-            <th class="dino-table-header">Species</th>
-            <th class="dino-table-header">More Info</th>
+          <tr>
+            <th>Dinosaur</th>
+            <th>Dino Name</th>
+            <th>Species</th>
+            <th>More Info</th>
           </tr>
         </thead>
         <tbody>
           <% for (let dinosaur of dinosaurs) { %>
-          <tr class="dino-row">
-            <td id="hide-mobile-table">
-              <img
-                src="<%= dinosaur.image.url %>"
-                alt=""
-                class="dino-index-img"
-              />
-            </td>
-            <td><span class="dino-table-item"><%= dinosaur.name %></span></td>
+          <tr>
             <td>
-              <span class="dino-table-item"><%= dinosaur.species %></span>
+              <img src="<%= dinosaur.image.url %>" alt="" />
             </td>
+            <td><%= dinosaur.name %></td>
+            <td><%= dinosaur.species %></td>
             <td>
-              <a
-                href="/dinosaurs/<%= dinosaur._id  %>"
-                class="dino-table-item dino-details"
+              <a href="/dinosaurs/<%= dinosaur._id  %>" class="dino-details"
                 >Details</a
               >
             </td>
@@ -49,7 +32,8 @@
         </tbody>
       </table>
     </section>
-  </div>
+  </main>
+
   <% if (currentUser && currentUser.isAdmin) { %>
   <div class="dino-add-container">
     <span class="add-dino-version"

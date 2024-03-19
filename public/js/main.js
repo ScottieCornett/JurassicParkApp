@@ -90,7 +90,7 @@ async function logWeather() {
   const weather = await response.json();
   const temperature = weather.data[0].temp;
   const icon = weather.data[0].weather.icon;
-  temp.textContent = `${temperature} F`;
+  temp.textContent = `${temperature}°F`;
   weatherImg.src = `/icons/${icon}.png`;
 }
 basicBtn.addEventListener('click', () => {

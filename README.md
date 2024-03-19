@@ -31,6 +31,7 @@ This project is the culmination of the knowledge I gained during the Web Develop
 
 - The dinosaur database should seed automatically due to the scripts in the package.json file. If this does not happen, you will need to run 'node seeds/dinoSeed.js' to seed the database.
 - I have the port set to 3000. If you would like to use a different port, simply update the 'app.listen()' function in the index.js file.
+- Due to rate limits, the fetch API call to weatherbit.io is commented out by default in main.js. To make the call, uncomment "window.addEventListener('load', logWeather);" in main.js and reload the page.
 
 - To access the CRUD functionality of the dinosaurs, you need to :
 
