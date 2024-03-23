@@ -4,12 +4,14 @@ const Schema = mongoose.Schema;
 const DinosaurSchema = new Schema({
   name: String,
   species: String,
+  scientificName: String,
+  length: String,
+  height: String,
+  weight: String,
+  historicalPeriod: String,
   description: String,
+  funFact: String,
   population: Number,
-  admin: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-  },
   image: {
     url: String,
     fileName: String,

@@ -1,61 +1,144 @@
 <% layout('layouts/boilerplate') %>
 <div class="new-dino">
   <div class="new-dino-form-wrapper">
-    <h1>Edit Dinosaur</h1>
+    <h1>Edit</h1>
+    <p>All edits must be cleared by Mr. Nedry!</p>
     <form
       action="/dinosaurs/<%= dinosaur._id  %>?_method=PUT"
       method="POST"
       class="new-dino-form"
       enctype="multipart/form-data"
     >
-      <div class="dino-form-item">
-        <label for="name" class="new-form-label">Name</label>
-        <input
-          type="text"
-          name="dinosaur[name]"
-          id="name"
-          class="new-form-input"
-          value="<%= dinosaur.name  %>"
-          required
-        />
-        <label for="species" class="new-form-label">Species</label>
-        <input
-          type="text"
-          name="dinosaur[species]"
-          id="species"
-          class="new-form-input"
-          value="<%= dinosaur.species  %>"
-          required
-        />
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="name" class="new-form-label">Name</label>
+          <input
+            type="text"
+            name="dinosaur[name]"
+            id="name"
+            class="new-form-input"
+            value="<%= dinosaur.name  %>"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="species" class="new-form-label">Species</label>
+          <input
+            type="text"
+            name="dinosaur[species]"
+            id="species"
+            class="new-form-input"
+            value="<%= dinosaur.species  %>"
+            required
+          />
+        </div>
       </div>
-      <div class="dino-form-item">
-        <label for="description" class="new-form-label">Description</label>
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="scientificName" class="new-form-label"
+            >Scientific Name</label
+          >
+          <input
+            type="text"
+            name="dinosaur[scientificName]"
+            id="scientificName"
+            class="new-form-input"
+            value="<%= dinosaur.scientificName  %>"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="length" class="new-form-label">Length</label>
+          <input
+            type="text"
+            name="dinosaur[length]"
+            id="length"
+            class="new-form-input"
+            value="<%= dinosaur.length  %>"
+            required
+          />
+        </div>
       </div>
-      <div class="dino-form-item">
-        <textarea
-          name="dinosaur[description]"
-          id="description"
-          cols="30"
-          rows="10"
-          required
-        >
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="height" class="new-form-label">Height</label>
+          <input
+            type="text"
+            name="dinosaur[height]"
+            id="height"
+            class="new-form-input"
+            value="<%= dinosaur.height  %>"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="weight" class="new-form-label">Current Weight</label>
+          <input
+            type="text"
+            name="dinosaur[weight]"
+            id="weight"
+            class="new-form-input"
+            value="<%= dinosaur.weight  %>"
+            required
+          />
+        </div>
+      </div>
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="historicalPeriod" class="new-form-label"
+            >Historical Period</label
+          >
+          <input
+            type="text"
+            name="dinosaur[historicalPeriod]"
+            id="historicalPeriod"
+            class="new-form-input"
+            value="<%= dinosaur.historicalPeriod %>"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="funFact" class="new-form-label">Fun Fact</label>
+          <input
+            type="text"
+            name="dinosaur[funFact]"
+            id="funFact"
+            class="new-form-input"
+            value="<%= dinosaur.funFact  %>"
+            required
+          />
+        </div>
+      </div>
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="population" class="new-form-label">Population</label>
+          <input
+            type="number"
+            name="dinosaur[population]"
+            id="population"
+            class="new-form-input"
+            value="<%= dinosaur.population  %>"
+            required
+          />
+        </div>
+        <div class="new-form-column">
+          <label for="image">Image</label>
+          <input type="file" id="image" name="image" />
+        </div>
+      </div>
+      <div class="new-form-row">
+        <div class="new-form-column">
+          <label for="description" class="new-form-label">Description</label>
+          <textarea
+            name="dinosaur[description]"
+            id="description"
+            cols="30"
+            rows="3"
+            required
+          >
 <%= dinosaur.description  %></textarea
-        >
-      </div>
-      <div class="dino-form-item">
-        <label for="population" class="new-form-label">Population</label>
-        <input
-          type="number"
-          name="dinosaur[population]"
-          id="population"
-          class="new-form-input"
-          value="<%=dinosaur.population  %>"
-          required
-        />
-      </div>
-      <div class="dino-form-item">
-        <label for="image">Image</label>
-        <input type="file" id="image" name="image" />
+          >
+        </div>
       </div>
       <div class="new-button">
         <button class="new-btn">Update Dinosaur</button>

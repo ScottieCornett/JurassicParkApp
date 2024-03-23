@@ -14,8 +14,15 @@ const seedDinos = async () => {
     {
       name: 'Sue',
       species: 'Tyrannosaurus',
+      scientificName: 'Tyrannosaurus Rex',
+      length: '41 ft (12.4 m)',
+      height: '13 ft (4m) at the hip',
+      weight: '18,000 lbs',
+      historicalPeriod: 'Late Cretaceous',
       description:
-        'The star of the show! Sue is a fearsome beast to behold. Gaze at your own risk!!',
+        'In Latin, Rex means "King". Since all of our animals are female, it is safe to call Sue the Queen instead. Weighing in at over 8 tons, she is the fiercest predator to ever walk the Earth. Her 5 foot long skull is jammed packed with bone crushing teeth up to 12 inches in length! Visit her at the Tyrannosaurs Rex Kingdom at Jurassic Park.. If you dare.',
+      funFact:
+        'The T-Rex has one of the best eyesights of all time. For comparison, it can see 13 times greater than a human being!',
       population: 1,
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708560746/jurassicpark/agcrgehlwravhreymsgv.png',
@@ -25,8 +32,15 @@ const seedDinos = async () => {
     {
       name: 'Cera',
       species: 'Triceratops',
+      scientificName: 'Triceratops horridus',
+      length: '30 ft (9m)',
+      height: '7.5 ft (2.3m)',
+      weight: '16,000 lbs',
+      historicalPeriod: 'Late Cretaceous',
       description:
-        'Cera is our adult Triceratops. Her brow horns are over 3 feet long!',
+        'Cera is our adult Triceratops. She weighs over 12 tons. For comparison, a bull African elephant weight around 5-6 tons! Her frilled skull has two brow horns that are over three feet long and single horn on her snout. In the time of the dinosaurs, the horns were used for defense from large predators such as Tyrannosaurus.',
+      funFact:
+        'The name Triceratops comes from the Greek for "three-horned face"',
       population: 2,
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708818093/jurassicpark/trike1_mealqf.png',
@@ -36,8 +50,14 @@ const seedDinos = async () => {
     {
       name: 'Trisha',
       species: 'Triceratops',
+      scientificName: 'Triceratops horridus',
+      length: '10 ft (3.3 m)',
+      height: '3 ft (1m)',
+      weight: '5000 lbs',
+      historicalPeriod: 'Late Cretaceous',
       description:
         'Our newest addition to Jurassic Park, Trisha is a juvenile Triceratops. She can be viewed in our nursery for now.',
+      funFact: 'The triceratops can have up to 800 teeth!',
       population: 2,
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708818092/jurassicpark/babytrike_njglnd.png',
@@ -47,9 +67,15 @@ const seedDinos = async () => {
     {
       name: 'Victoria',
       species: 'Velociraptor',
+      scientificName: 'Velociraptor mongoliensis',
+      length: '12 ft (3.7 m)',
+      height: '6.5 ft (2.1 m)',
+      weight: '650 lbs',
+      historicalPeriod: 'Late Cretaceous',
       description:
         'Our oldest and largest Raptor, Victoria leads our ferocious pack of apex predators at Jurassic Park!',
-      population: 3,
+      funFact:
+        'The Velociraptor has a sickle shaped claw on the second toe of each foot. This claw enables the raptor to slash open its prey with a single downward strike.',
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708821022/jurassicpark/raptor2_mp2att.png',
         fileName: 'jurassicpark/raptor2_mp2att',
@@ -58,8 +84,15 @@ const seedDinos = async () => {
     {
       name: 'Blue',
       species: 'Velociraptor',
+      scientificName: 'Velociraptor mongoliensis',
+      length: '12 ft (3.7 m)',
+      height: '6 ft (1.8 m)',
+      weight: '500 lbs',
+      historicalPeriod: 'Late Cretaceous',
       description:
         "Named for the blue stripe on her back, Blue is the fastest Raptor we have. Measured at 56mph in the open, prey doesn't stand a chance when she's on the prowl",
+      funFact:
+        'The Velociraptor has long forelimbs that ends with prehensile (grasping) hands. No wonder they learned how to open doors!',
       population: 3,
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708821023/jurassicpark/raptor4_nv0x4u.png',
@@ -69,8 +102,15 @@ const seedDinos = async () => {
     {
       name: 'Delta',
       species: 'Velociraptor',
+      scientificName: 'Velociraptor mongoliensis',
+      length: '12 ft (3.7 m)',
+      height: '6 ft (1.8 m)',
+      weight: '450 lbs',
+      historicalPeriod: 'Late Cretaceous',
       description:
         'Delta is the youngest and newest member of the Jurassic Park raptor pack. Do not let her young age fool you -- she is wise beyond her years at hunting.',
+      funFact:
+        'The Velociraptor has a sleek body built for speed, which makes it a incredibly effective predator.',
       population: 3,
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708821023/jurassicpark/raptor5_naxsq8.png',
@@ -80,8 +120,15 @@ const seedDinos = async () => {
     {
       name: 'Ami',
       species: 'Ankylosaurus',
+      scientificName: 'Ankylosaurus magniventris',
+      length: '26 ft (8 m)',
+      height: '5 ft (1.5 m)',
+      weight: '16,000 lbs',
+      historicalPeriod: 'Late Cretaceous',
       description:
         'Ami is a walking tank. Despite her fearsome appearance, she is one of our nicest dinosaurs!!',
+      funFact:
+        'The Ankylosaurus feeds on low-growing plants and shrubs. Back in the time of the dinosaurs, it relied on its bony plates for protection.',
       population: 1,
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708824218/jurassicpark/anky1_q82qmw.png',
@@ -91,8 +138,15 @@ const seedDinos = async () => {
     {
       name: 'Littlefoot',
       species: 'Brachiosaurus',
+      scientificName: 'Brachiosaurus altithorax',
+      length: '72 ft (22 m)',
+      height: '31 ft (9.4 m)',
+      weight: '99,000 lbs',
+      historicalPeriod: 'Late Jurassic',
       description:
-        "Littlefoot's 18 foot neck can be seen from over a mile away. She's our largest and friendliest dinosaur!",
+        'When one thinks of a dinosaur, the Brachiosaurus is one of the first things to come to mind. They are iconic in their size and shape, and Littlefoot is no exception. She is a marvel to behold. As a matter of fact, her 18 foot neck can be seen from over a mile away. Despite her enormous size, she is our friendliest dinosaur!',
+      funFact:
+        'Our heaviest dinosaur, Littlefoot weighs more than 20 fully grown African elephants!',
       population: 1,
       image: {
         url: 'https://res.cloudinary.com/dly9qoqoo/image/upload/v1708824219/jurassicpark/brachy1_hue6r1.png',

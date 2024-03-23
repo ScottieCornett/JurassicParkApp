@@ -1,39 +1,64 @@
 <% layout('layouts/boilerplate') %>
-<div class="dino-show-body">
-  <div class="dino-wrap">
-    <div class="dino-card">
-      <div class="dino-card-inner">
-        <div class="dino-card-header">
-          <img
-            src="<%= dinosaur.image.url  %>"
-            alt="a picture of the selected dinosaur"
-            class="dino-img"
-          />
-          <h1><%= dinosaur.name %></h1>
-        </div>
-        <div class="dino-card-body">
-          <h2>Description</h2>
-          <p><%= dinosaur.description %></p>
-          <p><strong>Species: </strong><%= dinosaur.species %></p>
-        </div>
-        <div class="return-to-dinos">
-          <a class="return-btn" href="/dinosaurs">Return to dino list</a>
-          <% if (currentUser && currentUser.isAdmin) { %>
-          <a
-            class="return-btn"
-            id="dino-edit"
-            href="/dinosaurs/<%=dinosaur._id  %>/edit"
-            >Edit</a
-          >
-          <form
-            action="/dinosaurs/<%=dinosaur._id  %>/?_method=DELETE"
-            method="POST"
-          >
-            <button class="return-btn" id="dino-delete">Delete</button>
-          </form>
-          <% } %>
-        </div>
-      </div>
+<div class="show-body">
+  <aside>
+    <h2>Quick Facts</h2>
+    <div class="aside-section">
+      <h3>Scientific name</h3>
+      <span><%= dinosaur.scientificName %></span>
     </div>
-  </div>
+    <div class="aside-section">
+      <h3>Historical range</h3>
+      <span><%= dinosaur.historicalPeriod %></span>
+    </div>
+    <div class="aside-section">
+      <h3>Length</h3>
+      <span><%= dinosaur.length %></span>
+    </div>
+    <div class="aside-section">
+      <h3>Height</h3>
+      <span><%= dinosaur.height %></span>
+    </div>
+    <div class="aside-section">
+      <h3>Weight</h3>
+      <span><%= dinosaur.weight %></span>
+    </div>
+    <div class="aside-section">
+      <h3>Fun Fact</h3>
+      <span id="fact"><%= dinosaur.funFact %></span>
+    </div>
+  </aside>
+  <header class="show-header">
+    <h1><%= dinosaur.name %></h1>
+  </header>
+  <section class="show-main">
+    <figure>
+      <img src="<%= dinosaur.image.url  %>" alt="a picture of a dinosaur" />
+    </figure>
+    <figcaption><%= dinosaur.description %></figcaption>
+  </section>
+  <footer class="return-to-dinos">
+    <div class="return-btn-return">
+      <a id="return" href="/dinosaurs">Return to dino list</a>
+    </div>
+
+    <% if (currentUser && currentUser.isAdmin) { %>
+    <div class="return-btn-edit">
+      <a
+        class="return-btn"
+        id="dino-edit"
+        href="/dinosaurs/<%=dinosaur._id  %>/edit"
+        >Edit</a
+      >
+    </div>
+    <div class="return-btn-delete">
+      <form
+        action="/dinosaurs/<%=dinosaur._id  %>/?_method=DELETE"
+        method="POST"
+      >
+        <button class="return-btn" id="dino-delete">Delete</button>
+      </form>
+    </div>
+
+    <% } %>
+  </footer>
 </div>
