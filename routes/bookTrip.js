@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const page = require('../controllers/bookTrip');
 
-router.get('/', (req, res) => {
-  res.render('book');
-});
+router.get('/', page.renderBookTripPage);
 
 module.exports = router;

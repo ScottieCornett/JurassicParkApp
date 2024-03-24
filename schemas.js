@@ -14,6 +14,15 @@ module.exports.contactSchema = Joi.object({
   }).required(),
 });
 
+module.exports.userSchema = Joi.object({
+  user: Joi.object({
+    username: Joi.string().min(3).required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().min(8).max(16).required(),
+    isAdmin: Joi.boolean().required(),
+  }).required(),
+});
+
 // module.exports.dinosaurSchema = Joi.object({
 //   dinosaur: Joi.object({
 //     name: Joi.string().required,

@@ -73,9 +73,6 @@ menuToggle.addEventListener('click', () => {
     mobileMenu.classList.add('no-click');
     enableScroll();
   }
-  // menuToggle.classList.toggle('is-active');
-  // mobileMenu.classList.toggle('is-selected');
-  // disableScroll();
 });
 tickets.addEventListener('change', function () {
   ticketVal = parseFloat(this.value);

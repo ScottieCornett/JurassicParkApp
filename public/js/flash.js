@@ -10,12 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// document.addEventListener('keydown', function (e) {
-//   if (e.key === 'Escape' && !flashError.classList.contains('hidden')) {
-//     flashError.classList.add('hidden');
-//   }
-// });
-
 closeFlashBtn.addEventListener('click', () => {
   flashError.classList.add('hidden');
 });

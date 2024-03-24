@@ -11,15 +11,15 @@ module.exports.validateContact = (req, res, next) => {
   }
 };
 
-// module.exports.validateDinosaur = (req, res, next) => {
-//   const { error } = dinosaurSchema.validate(req.body);
-//   if (error) {
-//     const msg = error.details.map((el) => el.message).join(',');
-//     throw new ExpressError(msg, 400);
-//   } else {
-//     next();
-//   }
-// };
+module.exports.validateUser = (req, res, next) => {
+  const { error } = userSchema.validate(req.body);
+  if (error) {
+    const msg = error.details.map((el) => el.message).join(',');
+    throw new ExpressError(msg, 400);
+  } else {
+    next();
+  }
+};
 
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.session.user) {
