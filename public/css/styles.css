@@ -72,13 +72,12 @@ body {
   font-size: 25px;
   font-family: var(--main-font);
   border-bottom: 2px solid transparent;
-  color: rgba(210, 210, 210, 1);
+  color: #fff;
   text-decoration: none;
   font-weight: 400;
   cursor: pointer;
 }
 .nav-item-desktop:hover {
-  color: #fff;
   border-bottom: 2px solid #fff;
   transition: all 0.1s ease-in;
 }
@@ -594,7 +593,7 @@ footer {
   border-bottom: 2px solid transparent;
   width: 100%;
   padding: 15px 0px;
-  color: var(--darkgray);
+  color: #fff;
 }
 .no-click {
   pointer-events: none;
@@ -602,11 +601,11 @@ footer {
 .mobile-dropdown > a:hover {
   width: 40%;
   transition: all 0.2s ease;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #fff;
 }
 
 .is-selected {
-  transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -876,7 +875,7 @@ footer {
   font-weight: 400;
   padding: 8px 10px;
   border-radius: 5px;
-  border: 1.2px solid #c4cae0;
+  border: 1.5px solid #c4cae0;
   margin-top: 5px;
 }
 .new-form-column textarea {
@@ -886,6 +885,7 @@ footer {
 .new-form-column input:focus {
   outline: none;
   border-color: rgb(250, 101, 1);
+  transition: all 0.2s ease;
 }
 
 .new-btn {
@@ -1340,22 +1340,9 @@ footer {
   .new-dino {
     max-width: 100%;
   }
-  .new-dino-form-wrapper {
-    max-height: 75%;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    padding: 3px 3px 10px 5px;
-    max-width: 75%;
-  }
-  .new-dino-form-wrapper::-webkit-scrollbar {
-    width: 0;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .new-dino {
-    max-width: 100%;
+  .new-form-row .new-form-input,
+  .new-form-row textarea {
+    max-width: 93%;
   }
   .new-dino-form-wrapper {
     max-height: 75%;
@@ -1368,14 +1355,18 @@ footer {
   .new-dino-form-wrapper::-webkit-scrollbar {
     width: 0;
   }
+}
+
+@media screen and (max-width: 550px) {
+  .new-dino {
+    max-width: 100%;
+  }
+
   .new-btn {
     border-bottom-width: 10px;
     margin-right: 20px;
   }
-  .new-form-row {
-    max-width: 200px;
-    width: 100%;
-  }
+
   .pricing-button-modal {
     padding: 10px 15px;
   }
