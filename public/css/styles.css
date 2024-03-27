@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fira+Sans:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap');
+@font-face {
+  font-family: 'JurassicFont';
+  src: url('../fonts/JurassicPark-BL48.ttf');
+}
 
 :root {
   --main-font: 'Fira Sans', sans-serif;
+  --nav-font: 'JurassicFont', sans-serif;
 }
 
 * {
@@ -69,8 +74,8 @@ body {
 }
 
 .nav-item-desktop {
-  font-size: 25px;
-  font-family: var(--main-font);
+  font-size: 40px;
+  font-family: var(--nav-font);
   border-bottom: 2px solid transparent;
   color: #fff;
   text-decoration: none;
@@ -161,12 +166,17 @@ main.table {
 .table_header {
   width: 100%;
   height: 10%;
-  background-color: #fff4;
+  background-color: rgba(239, 123, 22, 0.865);
   padding: 0.8rem 1rem;
   color: #fff;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: 600;
   text-align: center;
+}
+.table_header h2 {
+  font-family: var(--nav-font);
+  font-weight: 300;
+  letter-spacing: 3px;
 }
 .table_body {
   width: 95%;
@@ -195,7 +205,8 @@ thead th {
   position: sticky;
   top: 0;
   left: 0;
-  background-color: #d5d1defe;
+  background-color: #244027ae;
+  color: #fff;
 }
 tbody tr:nth-child(even) {
   background-color: #0000000b;
@@ -208,7 +219,7 @@ tbody tr:hover {
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  background-color: rgb(40, 157, 224);
+  background-color: rgb(250, 101, 1);
 }
 .hide-desktop {
   display: none;
@@ -453,8 +464,9 @@ footer {
 .pricing-button:hover,
 .pricing-button:focus {
   cursor: pointer;
-  background-color: #eee;
-  transition: background-color 200ms ease-in-out;
+  background-color: rgb(250, 101, 1);
+  color: #fff;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .pricing-button.is-featured {
@@ -463,7 +475,8 @@ footer {
 }
 .pricing-button.is-featured:hover,
 .pricing-button.is-featured:focus {
-  background-color: rgb(253, 148, 36);
+  background-color: #fff;
+  color: rgb(250, 101, 1);
 }
 
 .is-active {
@@ -575,7 +588,7 @@ footer {
   position: absolute;
   height: 10px;
   display: flex;
-  font-size: 30px;
+  /* font-size: 30px; */
   letter-spacing: 0.05px;
   background: linear-gradient(
     to top left,
@@ -588,6 +601,7 @@ footer {
 
 .mobile-dropdown > a {
   text-align: center;
+  font-family: var(--nav-font);
   text-decoration: none;
   background: none;
   border-bottom: 2px solid transparent;
@@ -606,6 +620,7 @@ footer {
 
 .is-selected {
   transition: all 0.2s ease-in-out;
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -1070,7 +1085,7 @@ footer {
 }
 @media screen and (max-width: 1024px) {
   .nav-item-desktop {
-    font-size: 18px;
+    font-size: 32px;
   }
   .show-main img {
     border: none;
@@ -1120,15 +1135,17 @@ footer {
   }
 
   .dino-details {
-    background-color: rgb(40, 157, 224);
+    background-color: rgb(250, 101, 1);
   }
   td {
     min-width: 12.1rem;
   }
   .table_header {
-    font-size: 22px;
-    margin: 0 auto;
-    padding-right: 0.5rem;
+    font-size: 50px;
+    margin-top: auto;
+  }
+  .table_header h2 {
+    padding-top: 1.25rem;
   }
   .register-body {
     display: flex;
@@ -1158,7 +1175,7 @@ footer {
     visibility: visible;
   }
   .mobile-dropdown.is-selected a {
-    font-size: 20px;
+    font-size: 40px;
   }
   .container.btn {
     margin: 0 auto;
@@ -1355,6 +1372,22 @@ footer {
   .new-dino-form-wrapper::-webkit-scrollbar {
     width: 0;
   }
+  .table_header {
+    font-size: 40px;
+    margin-top: 0 auto;
+  }
+  .table_header h2 {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .table_header {
+    font-size: 30px;
+  }
+  .table_header h2 {
+    padding-top: 3rem;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -1532,6 +1565,15 @@ footer {
     margin-top: 20px;
     cursor: pointer;
   }
+  .table_header {
+    font-size: 20px;
+    text-align: center;
+    padding: 0 0 1rem 0;
+  }
+  .table_header h2 {
+    padding-right: 0rem;
+    text-wrap: nowrap;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -1638,6 +1680,14 @@ footer {
   }
   .modal-section {
     margin: 0 40px;
+  }
+  .table_header {
+    font-size: 20px;
+    text-align: center;
+    padding: 0 0 1.25rem 0;
+  }
+  .table_header h2 {
+    padding-right: 0rem;
   }
 }
 

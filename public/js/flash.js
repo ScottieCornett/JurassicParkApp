@@ -1,4 +1,3 @@
-const closeFlashBtn = document.querySelector('.close-flash');
 const flashError = document.querySelector('.flash-error');
 const flashSuccess = document.querySelector('.flash-success');
 
@@ -8,10 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
       flashError.classList.add('hidden');
     }, 2000);
   }
-});
-
-closeFlashBtn.addEventListener('click', () => {
-  flashError.classList.add('hidden');
 });
 
 function closeSuccessFlash() {
