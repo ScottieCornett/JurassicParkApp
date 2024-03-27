@@ -39,6 +39,6 @@ This project is the culmination of the knowledge I gained during the Web Develop
 2. Sign in to the application using the credentials 'admin' as both the username and password
 3. Set a .env file in the root directory of the file with the following fields :
 
-CLOUDINARY_CLOUD_NAME = 'Your Cloudinary Cloud name'
-CLOUDINARY_KEY = 'Your Cloudinary API Key'
-COULDINARY_SECRET = 'You Cloudinary API secret'
+*CLOUDINARY_CLOUD_NAME = 'Your Cloudinary Cloud name'
+*CLOUDINARY_KEY = 'Your Cloudinary API Key'
+\*COULDINARY_SECRET = 'You Cloudinary API secret'

@@ -56,7 +56,6 @@ body {
   height: 10%;
   width: 100%;
   padding-bottom: 10px;
-  margin-bottom: -5px;
   background: linear-gradient(
     to top left,
     rgba(255, 29, 24, 1),
@@ -76,6 +75,7 @@ body {
 .nav-item-desktop {
   font-size: 40px;
   font-family: var(--nav-font);
+  letter-spacing: 2px;
   border-bottom: 2px solid transparent;
   color: #fff;
   text-decoration: none;
@@ -117,12 +117,12 @@ main section.banner .home-container {
 .home-container h1 {
   color: white;
   font-size: 72px;
-  font-weight: 700;
+  font-weight: 900;
 }
 .reserve {
   color: white;
   font-size: 30px;
-  padding: 3rem 0;
+  padding: 1rem 0;
   font-weight: 300;
 }
 .dino-body {
@@ -282,14 +282,16 @@ aside h2 {
   flex-direction: column;
   justify-content: center;
   background: url('../imgs/raptorete.png') center / cover;
-  margin-top: 5px;
   color: #fff;
   border-radius: 5px;
   text-align: center;
 }
 .show-header h1 {
-  font-size: 4rem;
+  font-size: 6rem;
+  font-weight: 300;
+  letter-spacing: 2px;
   text-shadow: 0px 1px 5px #fff;
+  font-family: var(--nav-font);
   text-transform: uppercase;
 }
 .show-main {
@@ -602,6 +604,7 @@ footer {
 .mobile-dropdown > a {
   text-align: center;
   font-family: var(--nav-font);
+  letter-spacing: 3px;
   text-decoration: none;
   background: none;
   border-bottom: 2px solid transparent;
@@ -620,7 +623,6 @@ footer {
 
 .is-selected {
   transition: all 0.2s ease-in-out;
-  font-size: 30px;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -636,45 +638,67 @@ footer {
 
 .modal {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30%;
-  height: 40%;
+  width: 60%;
+  height: 50%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  background-color: #fff;
+  border: 5px solid #222d;
+  border-radius: 10px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
-.modal h2 {
-  margin: 40px 40px;
-  font-size: 26px;
-  font-weight: 400;
-  text-transform: uppercase;
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
 }
-.modal label {
-  margin-right: 5px;
-  font-size: 16px;
-  align-self: flex-start;
+.modal-section label {
+  align-self: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+  width: 100%;
+  border-bottom: 2px solid #bbb;
 }
-.modal-section {
+.modal-label {
+  display: block;
+  width: 100%;
+  margin: 20px;
+  align-self: center;
+}
+.modal-select {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  font-size: 12px;
-  margin: 20px;
 }
-.modal option {
-  align-self: flex-end;
-  width: 20px;
-  height: 15px;
-  margin-left: 10px;
+.modal-select #tickets,
+.modal-select #trip-length {
+  position: relative;
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  align-self: center;
+  border: 2px solid #222;
+  border-radius: 5px;
+  text-align: center;
+}
+.modal h2 {
+  font-family: var(--nav-font);
+  font-size: 42px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
 }
 .pricing-button-modal {
   border: 1px solid rgb(250, 101, 1);
@@ -683,7 +707,7 @@ footer {
   display: inline-block;
   padding: 15px 35px;
   text-decoration: none;
-  margin: 25px 0;
+  margin: 10px;
 }
 .pricing-button-modal:hover,
 .pricing-button-modal:focus {
@@ -700,26 +724,20 @@ footer {
 .pricing-button-modal-is-featured:focus {
   background-color: #aaa;
 }
-#tickets {
-  width: 50px;
-  height: 20px;
-  outline: auto;
-  align-self: flex-end;
-}
-.modal #trip-length {
-  width: 50px;
-  height: 20px;
-  outline: auto;
-}
 
 .close-modal {
   position: relative;
-  align-self: flex-end;
-  background: none;
-  border: none;
-  columns: #333;
-  font-size: 60px;
+  top: 1%;
+  left: 47%;
+  font-size: 30px;
+  font-weight: 700;
+  height: 40px;
+  color: #333;
   cursor: pointer;
+  border: 0.5px solid #333;
+  padding: 0px 5px 0px 5px;
+  background: none;
+  border-radius: 5px;
 }
 .close-modal:hover {
   color: #777;
@@ -840,8 +858,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../imgs/indombaby.png');
-  background-size: cover;
+  background: url('../imgs/indombaby.png') center / cover;
   font-size: 1.5rem;
 }
 
@@ -943,9 +960,9 @@ footer {
 }
 .register-body h1 {
   text-align: center;
-  font-weight: 700;
-  font-size: 50px;
-  padding: 2rem;
+  font-family: var(--nav-font);
+  font-weight: 300;
+  font-size: 80px;
 }
 .register-label {
   font-weight: 600;
@@ -995,6 +1012,10 @@ footer {
   outline: none;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
+}
+.register-btn:hover {
+  background-color: rgb(253, 148, 36);
 }
 .flash-error {
   color: #fff;
@@ -1043,25 +1064,6 @@ footer {
   .container.btn {
     margin: 0 auto;
   }
-
-  .modal {
-    height: 400px;
-    max-height: 100%;
-    justify-content: space-evenly;
-  }
-  .modal-buttons {
-    display: flex;
-    flex-direction: row;
-  }
-  .pricing-button-modal {
-    font-size: 12px;
-    padding: 10px 25px;
-  }
-
-  .modal h2 {
-    display: none;
-  }
-
   h3 {
     font-size: 25px;
   }
@@ -1118,14 +1120,8 @@ footer {
   #years {
     font-size: 52px;
   }
-  .modal-buttons {
-    display: flex;
-    flex-direction: row;
-  }
-  .pricing-button-modal {
-    font-size: 12px;
-    padding: 10px 25px;
-    margin: 20px 15px;
+  .modal-label label {
+    font-size: 18px;
   }
   .dino-header h1 {
     font-size: 36px;
@@ -1175,7 +1171,10 @@ footer {
     visibility: visible;
   }
   .mobile-dropdown.is-selected a {
-    font-size: 40px;
+    font-size: 33px;
+  }
+  #meet {
+    border-right: 2px solid transparent;
   }
   .container.btn {
     margin: 0 auto;
@@ -1197,7 +1196,6 @@ footer {
     font-size: 52px;
   }
   .modal {
-    height: 400px;
     max-height: 100%;
     justify-content: space-evenly;
   }
@@ -1207,24 +1205,13 @@ footer {
   }
   .pricing-button-modal {
     font-size: 16px;
-    padding: 20px 35px;
-  }
-  .modal h2 {
-    display: none;
   }
   .modal label {
-    font-size: 12px;
+    font-size: 16px;
   }
-  .modal-section {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-basis: auto;
-    flex-shrink: 2;
+  .modal-select #tickets,
+  .modal-select #trip-length {
+    width: 200px;
   }
 
   .container {
@@ -1252,7 +1239,7 @@ footer {
   }
   .register-body h1 {
     font-weight: 400;
-    font-size: 30px;
+    font-size: 70px;
     margin-bottom: 40px;
   }
   .register-label,
@@ -1388,6 +1375,16 @@ footer {
   .table_header h2 {
     padding-top: 3rem;
   }
+  .modal {
+    width: 70%;
+    height: 50%;
+  }
+  .pricing-button-modal {
+    font-size: 14px;
+  }
+  .close-modal {
+    left: 43%;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -1398,10 +1395,6 @@ footer {
   .new-btn {
     border-bottom-width: 10px;
     margin-right: 20px;
-  }
-
-  .pricing-button-modal {
-    padding: 10px 15px;
   }
   .hide-desktop {
     color: #222;
@@ -1477,35 +1470,19 @@ footer {
   .thank-you-inner li:last-of-type {
     padding-bottom: 0.1.5rem;
   }
-  .modal {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 180px;
-    background-color: white;
-    padding: 6rem;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
+  .modal-select #tickets,
+  .modal-select #trip-length {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
   }
-  .modal-buttons {
-    position: absolute;
-    top: 80%;
-    margin-bottom: 2px;
-  }
-  button.close-modal {
-    position: absolute;
-    top: 0;
-    right: 0;
+  .modal-section label {
+    font-size: 14px;
   }
   .pricing-button-modal {
-    font-size: 12px;
-    padding: 0.4rem 0.6rem;
-  }
-  .modal-section {
-    margin: 0 40px;
+    padding: 10px 25px;
+    text-decoration: none;
+    margin: 10px;
   }
   .error-wrapper h1 {
     font-size: 24px;
@@ -1651,35 +1628,9 @@ footer {
   .thank-you-inner li:last-of-type {
     padding-bottom: 0.1.5rem;
   }
-  .modal {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 180px;
-    background-color: white;
-    padding: 6rem;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
-  }
-  .modal-buttons {
-    position: absolute;
-    top: 80%;
-    margin-bottom: 2px;
-  }
-  button.close-modal {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
   .pricing-button-modal {
+    padding: 8px 15px;
     font-size: 12px;
-    padding: 0.4rem 0.6rem;
-  }
-  .modal-section {
-    margin: 0 40px;
   }
   .table_header {
     font-size: 20px;
@@ -1689,12 +1640,15 @@ footer {
   .table_header h2 {
     padding-right: 0rem;
   }
+  .close-modal {
+    left: 43%;
+  }
+  .modal {
+    height: 70%;
+  }
 }
 
 @media screen and (max-width: 375px) {
-  .pricing-button-modal {
-    padding: 10px 25px;
-  }
   .dino-img {
     max-width: 300px;
     min-height: 100%;
@@ -1773,35 +1727,12 @@ footer {
   .thank-you-inner li:last-of-type {
     padding-bottom: 0.1.5rem;
   }
-  .modal {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 180px;
-    background-color: white;
-    padding: 6rem;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
+  .pricing-button-modal {
+    padding: 5px 10px;
+    font-size: 12px;
   }
   .modal-buttons {
-    position: absolute;
-    top: 80%;
-    margin-bottom: 2px;
-  }
-  button.close-modal {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .pricing-button-modal {
-    font-size: 12px;
-    padding: 0.4rem 0.6rem;
-  }
-  .modal-section {
-    margin: 0 40px;
+    padding-top: 20px;
   }
 }
 @media screen and (min-width: 1160px) {
