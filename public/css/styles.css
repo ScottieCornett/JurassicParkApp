@@ -30,7 +30,9 @@ body {
   padding-left: 128px;
   padding-right: 128px;
 }
-
+.home-container h1 {
+  letter-spacing: 2px;
+}
 .main-btn {
   appearance: none;
   border: none;
@@ -402,7 +404,7 @@ footer {
   background-size: cover;
 }
 .panel {
-  background-color: #eee;
+  background-color: #fffe;
   padding: 1rem 4em;
   width: 100%;
   max-width: 1100px;
@@ -427,11 +429,19 @@ footer {
   margin-top: 10px;
 }
 .pricing-header {
-  color: #12002f;
-  font-weight: 600;
+  color: rgb(250, 101, 1);
+  font-weight: 300;
   letter-spacing: 1px;
+  font-family: var(--nav-font);
+  font-size: 60px;
 }
-.pricing-features {
+.pricing-header-basic {
+  color: #12002f;
+}
+.pricing-header-silver {
+  color: #9da19e9e;
+}
+.pricing-header .pricing-features {
   margin: 50px 0 25px;
   color: #12002f;
 }
@@ -452,6 +462,7 @@ footer {
   display: block;
   font-size: 32px;
   font-weight: 700;
+  margin-top: 20px;
 }
 
 .pricing-button {
@@ -852,6 +863,7 @@ footer {
   font-size: 1.5rem;
   overflow: hidden;
 }
+
 .new-dino {
   height: 100vh;
   width: 100%;
@@ -874,6 +886,13 @@ footer {
   font-size: 30px;
   text-align: center;
   color: #12002f;
+}
+.new-dino-form-wrapper h1.contact-header {
+  font-family: var(--nav-font);
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-size: 60px;
+  color: rgb(250, 101, 1);
 }
 .new-dino-form-wrapper p {
   position: relative;
@@ -1366,6 +1385,9 @@ footer {
   .table_header h2 {
     padding-top: 2rem;
   }
+  .show-header {
+    border-radius: 0;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -1738,12 +1760,11 @@ footer {
 @media screen and (min-width: 1160px) {
   .panel {
     flex-direction: row;
-    opacity: 0.9;
     border-radius: 10px;
   }
   .pricing-plan {
     border-bottom: none;
-    border-right: 1px solid #e1f1ff;
+    border-right: 1px solid #56535a;
     padding: 25px 50px;
   }
   .pricing-plan:last-child {

@@ -2,7 +2,11 @@
 <div class="new-dino">
   <div class="new-dino-form-wrapper">
     <h1>Edit</h1>
-    <p>All edits must be cleared by Mr. Nedry!</p>
+    <p>
+      All dinosaur profile edits <em>must</em> be logged in the Asset
+      Disposition Log. Failure to do <strong>will</strong> result in
+      consequences! - Dennis
+    </p>
     <form
       action="/dinosaurs/<%= dinosaur._id  %>?_method=PUT"
       method="POST"

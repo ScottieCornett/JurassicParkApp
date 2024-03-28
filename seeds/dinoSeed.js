@@ -56,7 +56,7 @@ const seedDinos = async () => {
       weight: '5000 lbs',
       historicalPeriod: 'Late Cretaceous',
       description:
-        'Our newest addition to Jurassic Park, Trisha is a juvenile Triceratops. She can be viewed in our nursery for now.',
+        'Our newest addition to Jurassic Park, Trisha is a juvenile Triceratops. Although she is just a baby, she weighs close to 5000 pounds! Due to her young age, she has not been fully introduced to the park setting just yet. Until then, you can visit her in the Jurassic Park nursery.',
       funFact: 'The triceratops can have up to 800 teeth!',
       population: 2,
       image: {
@@ -73,7 +73,7 @@ const seedDinos = async () => {
       weight: '650 lbs',
       historicalPeriod: 'Late Cretaceous',
       description:
-        'Our oldest and largest Raptor, Victoria leads our ferocious pack of apex predators at Jurassic Park!',
+        'Our oldest and largest Raptor, Victoria leads our ferocious pack of apex predators at Jurassic Park! To establish as natural an environment as possible, live prey is introduced into the Raptor Pen twice daily. You can watch as Victoria leads our other two Raptors-- Blue and Delta-- on ambush style hunts. Be warned, however. This part of the show is not for the squeamish or faint of heart.',
       funFact:
         'The Velociraptor has a sickle shaped claw on the second toe of each foot. This claw enables the raptor to slash open its prey with a single downward strike.',
       image: {
@@ -90,7 +90,7 @@ const seedDinos = async () => {
       weight: '500 lbs',
       historicalPeriod: 'Late Cretaceous',
       description:
-        "Named for the blue stripe on her back, Blue is the fastest Raptor we have. Measured at 56mph in the open, prey doesn't stand a chance when she's on the prowl",
+        "Named for the blue stripe on her back, Blue is the fastest Raptor we have. Measured at 56mph in the open, prey doesn't stand a chance when she's on the prowl. Although Blue is not our largest Raptor, she does have the largest sickle claw of all of our Raptors. It measures in at over 7 inches in total length!",
       funFact:
         'The Velociraptor has long forelimbs that ends with prehensile (grasping) hands. No wonder they learned how to open doors!',
       population: 3,
@@ -103,12 +103,12 @@ const seedDinos = async () => {
       name: 'Delta',
       species: 'Velociraptor',
       scientificName: 'Velociraptor mongoliensis',
-      length: '12 ft (3.7 m)',
-      height: '6 ft (1.8 m)',
+      length: '11 ft (3.4 m)',
+      height: '5.5 ft (1.7 m)',
       weight: '450 lbs',
       historicalPeriod: 'Late Cretaceous',
       description:
-        'Delta is the youngest and newest member of the Jurassic Park raptor pack. Do not let her young age fool you -- she is wise beyond her years at hunting.',
+        'Delta is the youngest and newest member of the Jurassic Park raptor pack. Do not let her young age fool you -- she is wise beyond her years at hunting. She was introduced to the pack last fall and quickly earned her place. ',
       funFact:
         'The Velociraptor has a sleek body built for speed, which makes it a incredibly effective predator.',
       population: 3,
@@ -126,7 +126,7 @@ const seedDinos = async () => {
       weight: '16,000 lbs',
       historicalPeriod: 'Late Cretaceous',
       description:
-        'Ami is a walking tank. Despite her fearsome appearance, she is one of our nicest dinosaurs!!',
+        'Ami is a walking tank. Covered in bony plates and having a massive club at the end of her tail, Ami is fearsome in her appearance. She is one of our better dinosaurs to observe, as she moves at a very slow pace. You can usually spot her casually grazing on the Jurassic Park plant life in her paddock, where she eats around 120 pounds of plant matter a day.',
       funFact:
         'The Ankylosaurus feeds on low-growing plants and shrubs. Back in the time of the dinosaurs, it relied on its bony plates for protection.',
       population: 1,
