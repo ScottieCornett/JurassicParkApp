@@ -8,7 +8,7 @@ router
   .get(users.renderRegister)
   .post(wrapAsync(users.registerUser));
 
-router.route('/signin').get(users.renderSignIn).post(users.signIn);
+router.route('/signin').get(users.renderSignIn).post(wrapAsync(users.signIn));
 
 router.post('/logout', users.logout);
 
