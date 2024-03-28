@@ -2,7 +2,6 @@ const menuToggle = document.querySelector('.menu-toggle');
 const temp = document.querySelector('.temperature');
 const weatherImg = document.getElementById('weather-image');
 const mobileMenu = document.querySelector('.mobile-dropdown');
-const mobileLink = document.querySelectorAll('.link-item-mobile');
 const navItemDesktop = document.querySelectorAll('.nav-item-desktop');
 const parkOpen = document.getElementById('parkOpen');
 const basicBtn = document.getElementById('basic-btn');
@@ -13,7 +12,6 @@ const tickets = document.getElementById('tickets');
 const total = document.getElementById('total');
 const tripLength = document.getElementById('trip-length');
 const modalBtn = document.getElementById('modal-btn');
-// const bookingBody = document.querySelector('.booking-body');
 const closeModalBtn = document.querySelector('.close-modal');
 let ticketVal = 1;
 let tripLengthVal = 1;
@@ -126,8 +124,8 @@ function getTicketValue() {
       break;
   }
   function calcPrice() {
-    let answer = ticketVal * price * tripLengthVal;
-    return answer;
+    let totalPrice = ticketVal * price * tripLengthVal;
+    return totalPrice;
   }
   let totalSale = calcPrice();
   total.textContent = totalSale;

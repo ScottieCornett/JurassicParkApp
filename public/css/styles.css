@@ -12,7 +12,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   font-family: var(--main-font);
 }
 body {
@@ -780,6 +780,7 @@ footer {
 .thank-you-header {
   text-transform: uppercase;
   padding: 2rem;
+  text-align: center;
 }
 .thank-you-link {
   padding-top: 2rem;
@@ -804,11 +805,13 @@ footer {
 .thank-you-inner h2 {
   margin: 1rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .thank-you-inner h3 {
   padding: 2rem;
   font-weight: 300;
+  text-align: center;
 }
 .thank-you-inner li {
   list-style: none;
@@ -1083,7 +1086,7 @@ footer {
   .container.btn {
     margin: 0 auto;
   }
-  h3 {
+  .home-container h3 {
     font-size: 25px;
   }
   .home-container {
@@ -1092,9 +1095,6 @@ footer {
   .home-container h1 {
     font-size: 60px;
   }
-  /* #years {
-    font-size: 52px;
-  } */
 
   .nav-links-desktop {
     font-size: 20px;
@@ -1102,6 +1102,12 @@ footer {
 
   .dino-content {
     width: 100%;
+  }
+}
+@media screen and (max-width: 1330px) {
+  .home-container {
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -1121,8 +1127,8 @@ footer {
   .container {
     justify-content: center;
   }
-  h1,
-  h3 {
+  .home-container h1,
+  .home-container h3 {
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -1171,6 +1177,12 @@ footer {
   }
   .register-label {
     margin-top: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .thank-you-img img {
+    max-width: 600px;
   }
 }
 
@@ -1247,10 +1259,10 @@ footer {
     color: #fff;
   }
 
-  h1 {
+  .home-container h1 {
     font-size: 50px;
   }
-  h3 {
+  .home-container h3 {
     font-size: 25px;
   }
   .nav-links-desktop {
@@ -1383,10 +1395,13 @@ footer {
     margin-top: 0 auto;
   }
   .table_header h2 {
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
   .show-header {
     border-radius: 0;
+  }
+  #image {
+    width: 80%;
   }
 }
 
@@ -1755,6 +1770,76 @@ footer {
   }
   .modal-buttons {
     padding-top: 20px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .home-container h1 {
+    font-size: 31px;
+  }
+  #years {
+    font-size: 31px;
+  }
+  .home-container h2 {
+    font-size: 25px;
+  }
+  .login-link a {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+  .modal {
+    width: 90%;
+  }
+  .modal-select {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-label label {
+    font-size: 10px;
+    text-wrap: wrap;
+    text-overflow: break;
+  }
+  .pricing-button-modal {
+    text-align: center;
+    font-size: 12px;
+  }
+  .add-dino-version {
+    display: none;
+  }
+  .dino-add-container {
+    height: 5%;
+  }
+  .table_header h2 {
+    font-size: 18px;
+    padding-top: 30px;
+  }
+  th,
+  td {
+    font-size: 10px;
+  }
+  .new-contact {
+    max-width: 280px;
+  }
+  .dino-add-btn {
+    transform: translate(-5%, 20%);
+    padding: 5px 10px;
+  }
+  .new-dino-form-wrapper {
+    min-width: 100%;
+    padding: 0;
+  }
+  .new-dino-form-wrapper h1.contact-header {
+    font-size: 30px;
+  }
+  .new-dino-form-wrapper p {
+    font-size: 10px;
+  }
+  .new-form-input input {
+    padding: 0;
+    width: 270px;
+  }
+  .panel {
+    align-items: center;
   }
 }
 @media screen and (min-width: 1160px) {

@@ -10,7 +10,7 @@ module.exports.createDinosaur = async (req, res, next) => {
   dinosaur.image.url = req.file.path;
   dinosaur.image.fileName = req.file.filename;
   await dinosaur.save();
-  req.flash('success', 'Successfully made a new dinosaur');
+  req.flash('success', 'Dinosaur successfully created');
   res.redirect(`/dinosaurs/${dinosaur._id}`);
 };
 
@@ -40,13 +40,13 @@ module.exports.editDinosaur = async (req, res, next) => {
     dinosaur.image.fileName = req.file.filename;
   }
   await dinosaur.save();
-  req.flash('success', 'You successfully updated a dinosaur');
+  req.flash('success', 'Dinosaur updated successfully');
   res.redirect(`/dinosaurs/${dinosaur._id}`);
 };
 
 module.exports.deleteDinosaur = async (req, res) => {
   const { id } = req.params;
   await Dinosaur.findByIdAndDelete(id);
-  req.flash('success', 'Successfully deleted dinosaur :(');
+  req.flash('success', 'Dinosaur deleted successfully');
   res.redirect('/');
 };
