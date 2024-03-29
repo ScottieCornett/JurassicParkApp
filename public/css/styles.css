@@ -127,6 +127,9 @@ main section.banner .home-container {
   padding: 1rem 0;
   font-weight: 300;
 }
+.break-mobile {
+  display: none;
+}
 .dino-body {
   min-height: 100vh;
   display: flex;
@@ -1094,7 +1097,7 @@ footer {
     margin: 0 auto;
   }
   .home-container h3 {
-    font-size: 25px;
+    font-size: 30px;
   }
   .home-container {
     margin: 0px;
@@ -1146,12 +1149,6 @@ footer {
     margin: 0px;
     padding: 0px 0px;
   }
-  .home-container h1 {
-    font-size: 46px;
-  }
-  #years {
-    font-size: 52px;
-  }
   .modal-label label {
     font-size: 18px;
   }
@@ -1183,7 +1180,16 @@ footer {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 966px) {
+  .home-container h1 {
+    font-size: 44px;
+  }
+  .home-container h3 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 820px) {
   .thank-you-img img {
     max-width: 600px;
   }
@@ -1223,11 +1229,8 @@ footer {
     margin: 0px;
     padding: 0px 0px;
   }
-  .home-container h1 {
-    font-size: 46px;
-  }
-  #years {
-    font-size: 52px;
+  .home-container h3 {
+    font-size: 26px;
   }
   .modal {
     max-height: 100%;
@@ -1262,12 +1265,6 @@ footer {
     color: #fff;
   }
 
-  .home-container h1 {
-    font-size: 50px;
-  }
-  .home-container h3 {
-    font-size: 25px;
-  }
   .nav-links-desktop {
     display: none;
   }
@@ -1403,6 +1400,17 @@ footer {
     width: 80%;
   }
 }
+@media screen and (max-width: 734px) {
+  .break-mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .break-mobile {
+    display: block;
+  }
+}
 
 @media screen and (max-width: 660px) {
   .table_header h2 {
@@ -1430,6 +1438,15 @@ footer {
 }
 
 @media screen and (max-width: 550px) {
+  .home-container h1 {
+    font-size: 40px;
+  }
+  #years {
+    font-weight: 700;
+  }
+  .home-container h3 {
+    font-size: 22px;
+  }
   .new-dino {
     max-width: 100%;
   }
@@ -1673,7 +1690,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 380px) {
   .dino-img {
     max-width: 300px;
     min-height: 100%;
@@ -1759,16 +1776,22 @@ footer {
   .modal-buttons {
     padding-top: 20px;
   }
+  .home-container h1 {
+    font-size: 30px;
+  }
+  .home-container h3 {
+    font-size: 20px;
+  }
 }
 @media screen and (max-width: 280px) {
   .home-container h1 {
-    font-size: 31px;
+    font-size: 26px;
   }
   #years {
-    font-size: 31px;
+    font-size: 26px;
   }
   .home-container h2 {
-    font-size: 25px;
+    font-size: 18px;
   }
   .login-link a {
     font-size: 10px;
