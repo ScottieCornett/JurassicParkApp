@@ -9,7 +9,6 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const User = require('./models/user');
 const ExpressError = require('./utils/ExpressError');
 
 const userRoutes = require('./routes/users');
