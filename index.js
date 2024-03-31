@@ -18,12 +18,20 @@ const dinoRoutes = require('./routes/dinos');
 const contact = require('./routes/contact');
 const thanks = require('./routes/thanks');
 
-mongoose.connect('mongodb://127.0.0.1:27017/jurassicpark');
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('Database connected!');
-});
+// mongoose.connect('mongodb://127.0.0.1:27017/jurassicpark');
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', () => {
+//   console.log('Database connected!');
+// });
+mongoose
+  .connect('mongodb://127.0.0.1:27017/jurassicpark')
+  .then(() => {
+    console.log('Connection open!');
+  })
+  .catch((err) => {
+    console.log('Error: ', err);
+  });
 
 const app = express();
 
