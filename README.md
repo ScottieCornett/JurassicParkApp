@@ -17,13 +17,15 @@ This project is the culmination of the knowledge I gained during the Web Develop
 
 ## How to install and run this project
 
+- Note: In order to run this project, you will need the following tools preinstalled on your machine :
+  -MongoDB
+  -NodeJS
+
 1. Clone this project
-2. Install Node and MongoDB on your machine
-3. Open a terminal in VSCode or navigate to the root folder in a terminal
-4. Run 'npm install' to update the npm packages
-5. Run 'node seeds/adminSeed.js' to seed the admin user in the local MongoDB database, then press 'Ctrl + C' to stop the server
-6. Run 'npm start' to restart the server
-7. Open a browser and navigate to 'localhost:3000'
+2. Run 'npm install' in the VS Code terminal to update the npm packages
+3. Run 'node seeds/adminSeed.js' to seed the admin user in the local MongoDB database, then press 'Ctrl + C' to stop the server
+4. Run 'npm start' to restart the server
+5. Open a browser and navigate to 'localhost:3000'
 
 ## Notes
 
